@@ -1,2 +1,4 @@
 
-Back: #FFD954
+NavBarBackground: #2089ff
+BorderColor: #ececec
+AddToDoPlaceholderColor: #cee0ff

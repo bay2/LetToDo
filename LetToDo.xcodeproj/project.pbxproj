@@ -11,6 +11,15 @@
 		918680921D88C24C00CF5187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918680901D88C24C00CF5187 /* Main.storyboard */; };
 		918680941D88C24C00CF5187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 918680931D88C24C00CF5187 /* Assets.xcassets */; };
 		918680971D88C24C00CF5187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918680951D88C24C00CF5187 /* LaunchScreen.storyboard */; };
+		91C873331D8BC89000FA2EF2 /* ColorsDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C873301D8BC89000FA2EF2 /* ColorsDefine.swift */; };
+		91C873341D8BC89000FA2EF2 /* ImageDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C873311D8BC89000FA2EF2 /* ImageDefine.swift */; };
+		91C873351D8BC89000FA2EF2 /* StoryboardDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C873321D8BC89000FA2EF2 /* StoryboardDefine.swift */; };
+		91C8733C1D8BE6E000FA2EF2 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C873381D8BE6E000FA2EF2 /* RxSwift.framework */; };
+		91C8733D1D8BE6E000FA2EF2 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C873391D8BE6E000FA2EF2 /* RxCocoa.framework */; };
+		91C8733E1D8BE6E000FA2EF2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C8733A1D8BE6E000FA2EF2 /* Realm.framework */; };
+		91C8733F1D8BE6E000FA2EF2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C8733B1D8BE6E000FA2EF2 /* RealmSwift.framework */; };
+		91C873431D8BEDC000FA2EF2 /* AddToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C873421D8BEDC000FA2EF2 /* AddToDoTableViewCell.swift */; };
+		91C873461D8C16E600FA2EF2 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C873451D8C16E600FA2EF2 /* UITextFieldExtension.swift */; };
 		91DA7E1D1D8AE1FC00E1C38E /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA7E1C1D8AE1FC00E1C38E /* HomeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +30,15 @@
 		918680931D88C24C00CF5187 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		918680961D88C24C00CF5187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		918680981D88C24C00CF5187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91C873301D8BC89000FA2EF2 /* ColorsDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsDefine.swift; sourceTree = "<group>"; };
+		91C873311D8BC89000FA2EF2 /* ImageDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDefine.swift; sourceTree = "<group>"; };
+		91C873321D8BC89000FA2EF2 /* StoryboardDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardDefine.swift; sourceTree = "<group>"; };
+		91C873381D8BE6E000FA2EF2 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		91C873391D8BE6E000FA2EF2 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		91C8733A1D8BE6E000FA2EF2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		91C8733B1D8BE6E000FA2EF2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		91C873421D8BEDC000FA2EF2 /* AddToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToDoTableViewCell.swift; sourceTree = "<group>"; };
+		91C873451D8C16E600FA2EF2 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		91DA7E1C1D8AE1FC00E1C38E /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -29,6 +47,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91C8733C1D8BE6E000FA2EF2 /* RxSwift.framework in Frameworks */,
+				91C8733D1D8BE6E000FA2EF2 /* RxCocoa.framework in Frameworks */,
+				91C8733E1D8BE6E000FA2EF2 /* Realm.framework in Frameworks */,
+				91C8733F1D8BE6E000FA2EF2 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +62,7 @@
 			children = (
 				9186808B1D88C24C00CF5187 /* LetToDo */,
 				9186808A1D88C24C00CF5187 /* Products */,
+				91C873371D8BE6E000FA2EF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +77,9 @@
 		9186808B1D88C24C00CF5187 /* LetToDo */ = {
 			isa = PBXGroup;
 			children = (
+				91C873361D8BCFDC00FA2EF2 /* Protocol */,
+				91C8732D1D8BC38E00FA2EF2 /* Define */,
+				91C8732C1D8BBFD100FA2EF2 /* Extensions */,
 				91DA7E1B1D8AE1D700E1C38E /* Home */,
 				9186808C1D88C24C00CF5187 /* AppDelegate.swift */,
 				918680901D88C24C00CF5187 /* Main.storyboard */,
@@ -64,9 +90,55 @@
 			path = LetToDo;
 			sourceTree = "<group>";
 		};
+		91C8732C1D8BBFD100FA2EF2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				91C873451D8C16E600FA2EF2 /* UITextFieldExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		91C8732D1D8BC38E00FA2EF2 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				91C873301D8BC89000FA2EF2 /* ColorsDefine.swift */,
+				91C873311D8BC89000FA2EF2 /* ImageDefine.swift */,
+				91C873321D8BC89000FA2EF2 /* StoryboardDefine.swift */,
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
+		91C873361D8BCFDC00FA2EF2 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Protocol;
+			path = Procotol;
+			sourceTree = "<group>";
+		};
+		91C873371D8BE6E000FA2EF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91C873381D8BE6E000FA2EF2 /* RxSwift.framework */,
+				91C873391D8BE6E000FA2EF2 /* RxCocoa.framework */,
+				91C8733A1D8BE6E000FA2EF2 /* Realm.framework */,
+				91C8733B1D8BE6E000FA2EF2 /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91C873411D8BED9A00FA2EF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				91C873421D8BEDC000FA2EF2 /* AddToDoTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		91DA7E1B1D8AE1D700E1C38E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				91C873411D8BED9A00FA2EF2 /* View */,
 				91DA7E1C1D8AE1FC00E1C38E /* HomeTableViewController.swift */,
 			);
 			path = Home;
@@ -82,6 +154,7 @@
 				918680851D88C24C00CF5187 /* Sources */,
 				918680861D88C24C00CF5187 /* Frameworks */,
 				918680871D88C24C00CF5187 /* Resources */,
+				91C873401D8BE7FA00FA2EF2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -140,13 +213,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		91C873401D8BE7FA00FA2EF2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		918680851D88C24C00CF5187 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				91DA7E1D1D8AE1FC00E1C38E /* HomeTableViewController.swift in Sources */,
+				91C873431D8BEDC000FA2EF2 /* AddToDoTableViewCell.swift in Sources */,
+				91C873461D8C16E600FA2EF2 /* UITextFieldExtension.swift in Sources */,
 				9186808D1D88C24C00CF5187 /* AppDelegate.swift in Sources */,
+				91C873351D8BC89000FA2EF2 /* StoryboardDefine.swift in Sources */,
+				91C873341D8BC89000FA2EF2 /* ImageDefine.swift in Sources */,
+				91C873331D8BC89000FA2EF2 /* ColorsDefine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -255,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -267,6 +365,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = LetToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xuemincai.LetToDo;
@@ -279,6 +381,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = LetToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xuemincai.LetToDo;

@@ -7,48 +7,63 @@
 //
 
 import UIKit
+import RxSwift
+
 
 class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        self.view.backgroundColor = UIColor.red
+        UIApplication.shared.setStatusBarHidden(false, with: .slide)
+        
+        stupNavBarItem()
+        
+    }
+
+    
+    /// 安装导航栏按钮
+    private func stupNavBarItem() {
+        
+        // 左侧 Nav 按钮
+        let barLeftBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "NavBarMuen"), style: .plain, target: nil, action: nil)
+        barLeftBtn.tintColor = UIColor.white
+        let barLeftSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        barLeftSpace.width = -16
+        self.navigationItem.leftBarButtonItems = [barLeftSpace, barLeftBtn]
+        
+        // 右侧 Nav 按钮
+        let barRightBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "NavBarSetting"), style: .plain, target: nil, action: nil)
+        barRightBtn.tintColor = UIColor.white
+        let barRightSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        barRightSpace.width = -16
+        self.navigationItem.rightBarButtonItems = [barRightSpace, barRightBtn]
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddToDoTableViewCell", for: indexPath)
 
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 55
+    }
 
     /*
     // Override to support conditional editing of the table view.
