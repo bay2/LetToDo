@@ -67,7 +67,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DjI-p3-PU4">
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" verticalHuggingPriority="260" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Laf-Dg-izZ">
-                                                    <state key="normal" image="ToDoListDone"/>
+                                                    <state key="normal" image="ToDoListInProgess"/>
+                                                    <state key="selected" image="ToDoListDone"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Running on" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCl-0S-5co">
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -95,6 +96,7 @@
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="cellTitle" destination="BCl-0S-5co" id="Ury-cc-K4M"/>
+                                    <outlet property="doneBtn" destination="Laf-Dg-izZ" id="2jR-ca-FuW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -133,5 +135,6 @@
     <resources>
         <image name="ToDoListAdd" width="40" height="40"/>
         <image name="ToDoListDone" width="40" height="40"/>
+        <image name="ToDoListInProgess" width="40" height="40"/>
     </resources>
 </document>

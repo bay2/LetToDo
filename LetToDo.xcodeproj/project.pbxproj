@@ -14,6 +14,7 @@
 		918680921D88C24C00CF5187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918680901D88C24C00CF5187 /* Main.storyboard */; };
 		918680941D88C24C00CF5187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 918680931D88C24C00CF5187 /* Assets.xcassets */; };
 		918680971D88C24C00CF5187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918680951D88C24C00CF5187 /* LaunchScreen.storyboard */; };
+		91C695331D918AE000AC88EB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C695321D918AE000AC88EB /* SnapKit.framework */; };
 		91C873331D8BC89000FA2EF2 /* ColorsDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C873301D8BC89000FA2EF2 /* ColorsDefine.swift */; };
 		91C873341D8BC89000FA2EF2 /* ImageDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C873311D8BC89000FA2EF2 /* ImageDefine.swift */; };
 		91C873351D8BC89000FA2EF2 /* StoryboardDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C873321D8BC89000FA2EF2 /* StoryboardDefine.swift */; };
@@ -37,6 +38,7 @@
 		918680931D88C24C00CF5187 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		918680961D88C24C00CF5187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		918680981D88C24C00CF5187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91C695321D918AE000AC88EB /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		91C873301D8BC89000FA2EF2 /* ColorsDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsDefine.swift; sourceTree = "<group>"; };
 		91C873311D8BC89000FA2EF2 /* ImageDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDefine.swift; sourceTree = "<group>"; };
 		91C873321D8BC89000FA2EF2 /* StoryboardDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardDefine.swift; sourceTree = "<group>"; };
@@ -55,11 +57,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91C8733E1D8BE6E000FA2EF2 /* Realm.framework in Frameworks */,
+				91C8733F1D8BE6E000FA2EF2 /* RealmSwift.framework in Frameworks */,
+				91C695331D918AE000AC88EB /* SnapKit.framework in Frameworks */,
 				910DC3601D8CD8910023D906 /* RxDataSources.framework in Frameworks */,
 				91C8733C1D8BE6E000FA2EF2 /* RxSwift.framework in Frameworks */,
 				91C8733D1D8BE6E000FA2EF2 /* RxCocoa.framework in Frameworks */,
-				91C8733E1D8BE6E000FA2EF2 /* Realm.framework in Frameworks */,
-				91C8733F1D8BE6E000FA2EF2 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +132,7 @@
 		91C873371D8BE6E000FA2EF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91C695321D918AE000AC88EB /* SnapKit.framework */,
 				910DC35F1D8CD8910023D906 /* RxDataSources.framework */,
 				91C873381D8BE6E000FA2EF2 /* RxSwift.framework */,
 				91C873391D8BE6E000FA2EF2 /* RxCocoa.framework */,
@@ -247,6 +251,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 			);
 			outputPaths = (
 			);

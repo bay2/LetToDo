@@ -101,6 +101,3 @@ class HomeTableViewController: UITableViewController {
 
 }
 
-private extension UITableView {
-    
-}

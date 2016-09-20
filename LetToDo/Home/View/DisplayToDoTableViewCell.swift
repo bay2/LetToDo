@@ -10,10 +10,10 @@ import UIKit
 
 class DisplayToDoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var doneBtn: UIButton!
     @IBOutlet weak var cellTitle: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
