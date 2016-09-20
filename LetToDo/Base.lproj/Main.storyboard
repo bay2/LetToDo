@@ -57,7 +57,7 @@
                                     <outlet property="inputText" destination="GqR-Pj-Owx" id="OCx-I6-4cl"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DoneToDoTableViewCell" rowHeight="55" id="YRl-t2-e0s">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DisplayToDoTableViewCell" rowHeight="55" id="YRl-t2-e0s" customClass="DisplayToDoTableViewCell" customModule="LetToDo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="147" width="375" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YRl-t2-e0s" id="3T8-sl-gQo">
@@ -93,6 +93,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="cellTitle" destination="BCl-0S-5co" id="Ury-cc-K4M"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

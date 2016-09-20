@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		910DC3601D8CD8910023D906 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910DC35F1D8CD8910023D906 /* RxDataSources.framework */; };
+		912A71671D8D283E0064275A /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A71661D8D283E0064275A /* UITableViewExtension.swift */; };
+		912A71691D8D2DB10064275A /* DisplayToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A71681D8D2DB10064275A /* DisplayToDoTableViewCell.swift */; };
 		9186808D1D88C24C00CF5187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9186808C1D88C24C00CF5187 /* AppDelegate.swift */; };
 		918680921D88C24C00CF5187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918680901D88C24C00CF5187 /* Main.storyboard */; };
 		918680941D88C24C00CF5187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 918680931D88C24C00CF5187 /* Assets.xcassets */; };
@@ -20,10 +23,14 @@
 		91C8733F1D8BE6E000FA2EF2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C8733B1D8BE6E000FA2EF2 /* RealmSwift.framework */; };
 		91C873431D8BEDC000FA2EF2 /* AddToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C873421D8BEDC000FA2EF2 /* AddToDoTableViewCell.swift */; };
 		91C873461D8C16E600FA2EF2 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C873451D8C16E600FA2EF2 /* UITextFieldExtension.swift */; };
+		91D7011C1D8CCA3C006E5741 /* HomeTableViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7011B1D8CCA3C006E5741 /* HomeTableViewVM.swift */; };
 		91DA7E1D1D8AE1FC00E1C38E /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA7E1C1D8AE1FC00E1C38E /* HomeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		910DC35F1D8CD8910023D906 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		912A71661D8D283E0064275A /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		912A71681D8D2DB10064275A /* DisplayToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayToDoTableViewCell.swift; sourceTree = "<group>"; };
 		918680891D88C24C00CF5187 /* LetToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9186808C1D88C24C00CF5187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		918680911D88C24C00CF5187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +46,7 @@
 		91C8733B1D8BE6E000FA2EF2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		91C873421D8BEDC000FA2EF2 /* AddToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToDoTableViewCell.swift; sourceTree = "<group>"; };
 		91C873451D8C16E600FA2EF2 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		91D7011B1D8CCA3C006E5741 /* HomeTableViewVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewVM.swift; sourceTree = "<group>"; };
 		91DA7E1C1D8AE1FC00E1C38E /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				910DC3601D8CD8910023D906 /* RxDataSources.framework in Frameworks */,
 				91C8733C1D8BE6E000FA2EF2 /* RxSwift.framework in Frameworks */,
 				91C8733D1D8BE6E000FA2EF2 /* RxCocoa.framework in Frameworks */,
 				91C8733E1D8BE6E000FA2EF2 /* Realm.framework in Frameworks */,
@@ -94,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				91C873451D8C16E600FA2EF2 /* UITextFieldExtension.swift */,
+				912A71661D8D283E0064275A /* UITableViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -119,6 +129,7 @@
 		91C873371D8BE6E000FA2EF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				910DC35F1D8CD8910023D906 /* RxDataSources.framework */,
 				91C873381D8BE6E000FA2EF2 /* RxSwift.framework */,
 				91C873391D8BE6E000FA2EF2 /* RxCocoa.framework */,
 				91C8733A1D8BE6E000FA2EF2 /* Realm.framework */,
@@ -131,13 +142,23 @@
 			isa = PBXGroup;
 			children = (
 				91C873421D8BEDC000FA2EF2 /* AddToDoTableViewCell.swift */,
+				912A71681D8D2DB10064275A /* DisplayToDoTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		91D7011A1D8CC9F3006E5741 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				91D7011B1D8CCA3C006E5741 /* HomeTableViewVM.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		91DA7E1B1D8AE1D700E1C38E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				91D7011A1D8CC9F3006E5741 /* ViewModel */,
 				91C873411D8BED9A00FA2EF2 /* View */,
 				91DA7E1C1D8AE1FC00E1C38E /* HomeTableViewController.swift */,
 			);
@@ -177,6 +198,7 @@
 				TargetAttributes = {
 					918680881D88C24C00CF5187 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = JZ264TB6A5;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -224,6 +246,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 			);
 			outputPaths = (
 			);
@@ -240,11 +263,14 @@
 			files = (
 				91DA7E1D1D8AE1FC00E1C38E /* HomeTableViewController.swift in Sources */,
 				91C873431D8BEDC000FA2EF2 /* AddToDoTableViewCell.swift in Sources */,
+				912A71691D8D2DB10064275A /* DisplayToDoTableViewCell.swift in Sources */,
 				91C873461D8C16E600FA2EF2 /* UITextFieldExtension.swift in Sources */,
 				9186808D1D88C24C00CF5187 /* AppDelegate.swift in Sources */,
 				91C873351D8BC89000FA2EF2 /* StoryboardDefine.swift in Sources */,
 				91C873341D8BC89000FA2EF2 /* ImageDefine.swift in Sources */,
+				912A71671D8D283E0064275A /* UITableViewExtension.swift in Sources */,
 				91C873331D8BC89000FA2EF2 /* ColorsDefine.swift in Sources */,
+				91D7011C1D8CCA3C006E5741 /* HomeTableViewVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JZ264TB6A5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -381,6 +408,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JZ264TB6A5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
