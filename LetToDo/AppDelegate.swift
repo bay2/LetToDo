@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import RxRealm
 
 let realm = try! Realm()
 
@@ -22,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(named: .navBarBackground)
         
         UIApplication.shared.setStatusBarHidden(true, with: .none)
+        
+        print(realm.configuration.fileURL?.description)
         
         return true
     }

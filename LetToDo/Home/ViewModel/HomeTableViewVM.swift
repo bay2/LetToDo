@@ -15,7 +15,7 @@ import RxDataSources
 /// - DisplayToDo: 展示 TODO Cell
 enum HomeListCellItem {
     case AddToDo(placeholder: String)
-    case DisplayToDo(title: String)
+    case DisplayToDo(taskID: String, title: String, isDone: Bool)
 }
 
 

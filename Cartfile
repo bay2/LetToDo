@@ -1,4 +1,5 @@
 github "ReactiveX/RxSwift" "3.0.0-beta.1"
-github "realm/realm-cocoa" "v1.1.0"
 github "RxSwiftCommunity/RxDataSources" "1.0.0-beta.2"
-github "SnapKit/SnapKit" "3.0.0"
+github "RxSwiftCommunity/RxRealm" "master"
+github "SnapKit/SnapKit"  ~> 3.0.0
+github "goktugyil/EZSwiftExtensions" "master"

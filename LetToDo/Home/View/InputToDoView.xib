@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="InputToDoView" id="iN0-l3-epB" customClass="InputToDoView" customModule="LetToDo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Q9-Bj-fmk">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" verticalHuggingPriority="260" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOa-ax-29j">
+                            <state key="normal" image="ToDoListAdd"/>
+                        </button>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add what u want TODO..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J9r-wg-WFd">
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="oOa-ax-29j" firstAttribute="centerY" secondItem="6Q9-Bj-fmk" secondAttribute="centerY" id="3p1-Kd-pGu"/>
+                        <constraint firstItem="J9r-wg-WFd" firstAttribute="leading" secondItem="oOa-ax-29j" secondAttribute="trailing" constant="5" id="G2c-ke-mBf"/>
+                        <constraint firstItem="J9r-wg-WFd" firstAttribute="centerY" secondItem="6Q9-Bj-fmk" secondAttribute="centerY" id="bIG-uQ-7RB"/>
+                        <constraint firstAttribute="height" constant="50" id="cPd-bV-5AP"/>
+                        <constraint firstAttribute="trailing" secondItem="J9r-wg-WFd" secondAttribute="trailing" constant="5" id="d1F-Gx-NTS"/>
+                        <constraint firstItem="oOa-ax-29j" firstAttribute="leading" secondItem="6Q9-Bj-fmk" secondAttribute="leading" constant="10" id="lCJ-R1-5AK"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="6Q9-Bj-fmk" secondAttribute="trailing" id="bq5-6w-o6b"/>
+                <constraint firstItem="6Q9-Bj-fmk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="69" id="caF-RV-oSa"/>
+                <constraint firstItem="6Q9-Bj-fmk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nhA-dc-M0X"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <connections>
+                <outlet property="addBtn" destination="oOa-ax-29j" id="LZw-FV-dqN"/>
+                <outlet property="inputText" destination="J9r-wg-WFd" id="mc4-jF-u6u"/>
+                <outlet property="inputTextView" destination="6Q9-Bj-fmk" id="pyk-WV-hQJ"/>
+            </connections>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ToDoListAdd" width="40" height="40"/>
+    </resources>
+</document>

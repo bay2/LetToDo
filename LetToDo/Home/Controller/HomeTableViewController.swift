@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxDataSources
+import RxRealm
 
 
 class HomeTableViewController: UITableViewController {
@@ -16,8 +17,7 @@ class HomeTableViewController: UITableViewController {
     private let disposeBag = DisposeBag()
     
     private var dataSource = RxTableViewSectionedReloadDataSource<HomeListSectionModel>()
-    private var sections: [HomeListSectionModel] = [.AddToDoSection(item: [.AddToDo(placeholder: "Add what u want TODO...")]),
-                                                    .DisplayToDoSection(item: [.DisplayToDo(title: "Running on the road, I will eat lots of")])]
+    private var sections: [HomeListSectionModel] = []
     
 
     override func viewDidLoad() {
@@ -55,10 +55,20 @@ class HomeTableViewController: UITableViewController {
     private func configTableView() {
         
         
-        skinTableViewDataSource(dataSource)
-        Observable.just(sections)
+        Observable.from(realm.objects(ToDoModel.self))
+            .map { (results) -> [HomeListCellItem] in
+                results.flatMap { (model: ToDoModel) -> HomeListCellItem in
+                    .DisplayToDo(taskID: model.taskID, title: model.taskName, isDone: model.isDone)
+                }
+            }
+            .map { (displayToDo) -> [HomeListSectionModel] in
+                [.AddToDoSection(item: [.AddToDo(placeholder: "Add what u want TODO...")]),
+                 .DisplayToDoSection(item: displayToDo)]
+            }
             .bindTo(tableView.rx.items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
+        
+        skinTableViewDataSource(dataSource)
         
         
     }
@@ -74,13 +84,15 @@ class HomeTableViewController: UITableViewController {
             case let .AddToDo(placeholder: placeholder):
                 let cell: AddToDoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.selectionStyle = .none
-                cell.inputText.placeholder = placeholder
+                cell.inputBtn.setTitle(placeholder, for: .normal)
                 return cell
                 
-            case let .DisplayToDo(title: title) :
+            case let .DisplayToDo(taskID: taskID, title: title, isDone: isDone) :
                 let cell: DisplayToDoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.selectionStyle = .none
                 cell.cellTitle.text = title
+                cell.doneBtn.isSelected = isDone
+                cell.taskID = taskID
                 return cell
                
             }

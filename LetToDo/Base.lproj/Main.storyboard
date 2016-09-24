@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9D8-GI-ZFx">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9D8-GI-ZFx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -27,19 +27,21 @@
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" verticalHuggingPriority="260" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ve2-Vo-wh2">
                                                     <state key="normal" image="ToDoListAdd"/>
                                                 </button>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add what u want TODO..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GqR-Pj-Owx">
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0t-br-ul0">
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                                    <state key="normal" title="Add what u want TODO...">
+                                                        <color key="titleColor" red="0.80784313725490198" green="0.8784313725490196" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstItem="O0t-br-ul0" firstAttribute="leading" secondItem="ve2-Vo-wh2" secondAttribute="trailing" constant="5" id="25X-fY-NVE"/>
                                                 <constraint firstItem="ve2-Vo-wh2" firstAttribute="centerY" secondItem="s6N-0j-36G" secondAttribute="centerY" id="2Th-5w-sRH"/>
-                                                <constraint firstAttribute="trailing" secondItem="GqR-Pj-Owx" secondAttribute="trailing" id="AhT-Rw-wYP"/>
-                                                <constraint firstItem="GqR-Pj-Owx" firstAttribute="leading" secondItem="ve2-Vo-wh2" secondAttribute="trailing" constant="5" id="eNL-MZ-2SJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="O0t-br-ul0" secondAttribute="trailing" constant="5" id="Kec-HN-vez"/>
+                                                <constraint firstItem="O0t-br-ul0" firstAttribute="top" secondItem="s6N-0j-36G" secondAttribute="top" constant="5" id="NrN-rb-gjZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="O0t-br-ul0" secondAttribute="bottom" constant="5" id="m6h-vN-LmU"/>
                                                 <constraint firstItem="ve2-Vo-wh2" firstAttribute="leading" secondItem="s6N-0j-36G" secondAttribute="leading" constant="5" id="tw9-UO-5ru"/>
-                                                <constraint firstItem="GqR-Pj-Owx" firstAttribute="centerY" secondItem="s6N-0j-36G" secondAttribute="centerY" id="vEM-nP-luG"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -54,7 +56,7 @@
                                 <connections>
                                     <outlet property="addBtn" destination="ve2-Vo-wh2" id="4E2-8z-vmM"/>
                                     <outlet property="bgView" destination="s6N-0j-36G" id="gi9-vo-Hil"/>
-                                    <outlet property="inputText" destination="GqR-Pj-Owx" id="OCx-I6-4cl"/>
+                                    <outlet property="inputBtn" destination="O0t-br-ul0" id="0GV-oM-gsf"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DisplayToDoTableViewCell" rowHeight="55" id="YRl-t2-e0s" customClass="DisplayToDoTableViewCell" customModule="LetToDo" customModuleProvider="target">
