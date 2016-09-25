@@ -10,57 +10,13 @@
         <scene sceneID="bXx-Hk-FR8">
             <objects>
                 <tableViewController storyboardIdentifier="HomeTableViewController" id="JRe-24-jxf" customClass="HomeTableViewController" customModule="LetToDo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aBt-Ra-AQy">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aBt-Ra-AQy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddToDoTableViewCell" rowHeight="55" id="Jxr-fq-Pat" customClass="AddToDoTableViewCell" customModule="LetToDo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="55"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jxr-fq-Pat" id="tej-VP-urH">
-                                    <frame key="frameInset" width="375" height="55"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6N-0j-36G">
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" verticalHuggingPriority="260" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ve2-Vo-wh2">
-                                                    <state key="normal" image="ToDoListAdd"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0t-br-ul0">
-                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
-                                                    <state key="normal" title="Add what u want TODO...">
-                                                        <color key="titleColor" red="0.80784313725490198" green="0.8784313725490196" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="O0t-br-ul0" firstAttribute="leading" secondItem="ve2-Vo-wh2" secondAttribute="trailing" constant="5" id="25X-fY-NVE"/>
-                                                <constraint firstItem="ve2-Vo-wh2" firstAttribute="centerY" secondItem="s6N-0j-36G" secondAttribute="centerY" id="2Th-5w-sRH"/>
-                                                <constraint firstAttribute="trailing" secondItem="O0t-br-ul0" secondAttribute="trailing" constant="5" id="Kec-HN-vez"/>
-                                                <constraint firstItem="O0t-br-ul0" firstAttribute="top" secondItem="s6N-0j-36G" secondAttribute="top" constant="5" id="NrN-rb-gjZ"/>
-                                                <constraint firstAttribute="bottom" secondItem="O0t-br-ul0" secondAttribute="bottom" constant="5" id="m6h-vN-LmU"/>
-                                                <constraint firstItem="ve2-Vo-wh2" firstAttribute="leading" secondItem="s6N-0j-36G" secondAttribute="leading" constant="5" id="tw9-UO-5ru"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstItem="s6N-0j-36G" firstAttribute="leading" secondItem="tej-VP-urH" secondAttribute="leading" constant="5" id="7fh-ao-e6v"/>
-                                        <constraint firstItem="s6N-0j-36G" firstAttribute="top" secondItem="tej-VP-urH" secondAttribute="top" constant="5" id="LKg-3C-B66"/>
-                                        <constraint firstAttribute="trailing" secondItem="s6N-0j-36G" secondAttribute="trailing" constant="5" id="lPd-1m-k33"/>
-                                        <constraint firstAttribute="bottom" secondItem="s6N-0j-36G" secondAttribute="bottom" id="yfg-lk-dUy"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="addBtn" destination="ve2-Vo-wh2" id="4E2-8z-vmM"/>
-                                    <outlet property="bgView" destination="s6N-0j-36G" id="gi9-vo-Hil"/>
-                                    <outlet property="inputBtn" destination="O0t-br-ul0" id="0GV-oM-gsf"/>
-                                </connections>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DisplayToDoTableViewCell" rowHeight="55" id="YRl-t2-e0s" customClass="DisplayToDoTableViewCell" customModule="LetToDo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="147" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YRl-t2-e0s" id="3T8-sl-gQo">
                                     <frame key="frameInset" width="375" height="55"/>
@@ -97,6 +53,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <outlet property="bgView" destination="DjI-p3-PU4" id="7us-n2-wVg"/>
                                     <outlet property="cellTitle" destination="BCl-0S-5co" id="Ury-cc-K4M"/>
                                     <outlet property="doneBtn" destination="Laf-Dg-izZ" id="2jR-ca-FuW"/>
                                 </connections>
@@ -135,7 +92,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ToDoListAdd" width="40" height="40"/>
         <image name="ToDoListDone" width="40" height="40"/>
         <image name="ToDoListInProgess" width="40" height="40"/>
     </resources>

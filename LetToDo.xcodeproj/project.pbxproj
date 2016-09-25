@@ -18,6 +18,9 @@
 		918680971D88C24C00CF5187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918680951D88C24C00CF5187 /* LaunchScreen.storyboard */; };
 		91A325A31D956BBD00FDCE6B /* UIStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A325A21D956BBD00FDCE6B /* UIStyle.swift */; };
 		91A325A51D9607A400FDCE6B /* EZSwiftExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A325A41D9607A400FDCE6B /* EZSwiftExtensions.framework */; };
+		91A325A71D965ABF00FDCE6B /* AddToDoTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91A325A61D965ABF00FDCE6B /* AddToDoTableView.xib */; };
+		91A325A91D965BB800FDCE6B /* AddToDoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A325A81D965BB800FDCE6B /* AddToDoTableView.swift */; };
+		91B9F38A1D9667C300816AE7 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F3891D9667C300816AE7 /* Then.swift */; };
 		91BE646E1D955455001C64EC /* InputToDoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91BE646D1D955455001C64EC /* InputToDoView.xib */; };
 		91BE64701D9558F2001C64EC /* InputToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE646F1D9558F2001C64EC /* InputToDoView.swift */; };
 		91C695331D918AE000AC88EB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C695321D918AE000AC88EB /* SnapKit.framework */; };
@@ -28,7 +31,6 @@
 		91C8733D1D8BE6E000FA2EF2 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C873391D8BE6E000FA2EF2 /* RxCocoa.framework */; };
 		91C8733E1D8BE6E000FA2EF2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C8733A1D8BE6E000FA2EF2 /* Realm.framework */; };
 		91C8733F1D8BE6E000FA2EF2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C8733B1D8BE6E000FA2EF2 /* RealmSwift.framework */; };
-		91C873431D8BEDC000FA2EF2 /* AddToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C873421D8BEDC000FA2EF2 /* AddToDoTableViewCell.swift */; };
 		91D7011C1D8CCA3C006E5741 /* HomeTableViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7011B1D8CCA3C006E5741 /* HomeTableViewVM.swift */; };
 		91E1278D1D9416280043B693 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1278C1D9416280043B693 /* HomeTableViewController.swift */; };
 		91E1278F1D9416CF0043B693 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E1278E1D9416CF0043B693 /* RxRealm.framework */; };
@@ -48,6 +50,9 @@
 		918680981D88C24C00CF5187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91A325A21D956BBD00FDCE6B /* UIStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStyle.swift; sourceTree = "<group>"; };
 		91A325A41D9607A400FDCE6B /* EZSwiftExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EZSwiftExtensions.framework; path = Carthage/Build/iOS/EZSwiftExtensions.framework; sourceTree = "<group>"; };
+		91A325A61D965ABF00FDCE6B /* AddToDoTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddToDoTableView.xib; sourceTree = "<group>"; };
+		91A325A81D965BB800FDCE6B /* AddToDoTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToDoTableView.swift; sourceTree = "<group>"; };
+		91B9F3891D9667C300816AE7 /* Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		91BE646D1D955455001C64EC /* InputToDoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputToDoView.xib; sourceTree = "<group>"; };
 		91BE646F1D9558F2001C64EC /* InputToDoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputToDoView.swift; sourceTree = "<group>"; };
 		91C695321D918AE000AC88EB /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
@@ -58,7 +63,6 @@
 		91C873391D8BE6E000FA2EF2 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		91C8733A1D8BE6E000FA2EF2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		91C8733B1D8BE6E000FA2EF2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		91C873421D8BEDC000FA2EF2 /* AddToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToDoTableViewCell.swift; sourceTree = "<group>"; };
 		91D7011B1D8CCA3C006E5741 /* HomeTableViewVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewVM.swift; sourceTree = "<group>"; };
 		91E1278C1D9416280043B693 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		91E1278E1D9416CF0043B693 /* RxRealm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRealm.framework; path = Carthage/Build/iOS/RxRealm.framework; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				91A325A21D956BBD00FDCE6B /* UIStyle.swift */,
+				91B9F3891D9667C300816AE7 /* Then.swift */,
 			);
 			name = Protocol;
 			path = Procotol;
@@ -178,10 +183,11 @@
 		91C873411D8BED9A00FA2EF2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				91C873421D8BEDC000FA2EF2 /* AddToDoTableViewCell.swift */,
 				912A71681D8D2DB10064275A /* DisplayToDoTableViewCell.swift */,
 				91BE646D1D955455001C64EC /* InputToDoView.xib */,
 				91BE646F1D9558F2001C64EC /* InputToDoView.swift */,
+				91A325A61D965ABF00FDCE6B /* AddToDoTableView.xib */,
+				91A325A81D965BB800FDCE6B /* AddToDoTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -275,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A325A71D965ABF00FDCE6B /* AddToDoTableView.xib in Resources */,
 				918680971D88C24C00CF5187 /* LaunchScreen.storyboard in Resources */,
 				918680941D88C24C00CF5187 /* Assets.xcassets in Resources */,
 				918680921D88C24C00CF5187 /* Main.storyboard in Resources */,
@@ -316,15 +323,16 @@
 				910DC7DD1D91FE200033801A /* UITableViewExtension.swift in Sources */,
 				91A325A31D956BBD00FDCE6B /* UIStyle.swift in Sources */,
 				91E1278D1D9416280043B693 /* HomeTableViewController.swift in Sources */,
-				91C873431D8BEDC000FA2EF2 /* AddToDoTableViewCell.swift in Sources */,
 				912A71691D8D2DB10064275A /* DisplayToDoTableViewCell.swift in Sources */,
 				911021E81D9196B700BF7FA7 /* ToDoModel.swift in Sources */,
 				910DC7DE1D91FE200033801A /* UITextFieldExtension.swift in Sources */,
 				9186808D1D88C24C00CF5187 /* AppDelegate.swift in Sources */,
 				91BE64701D9558F2001C64EC /* InputToDoView.swift in Sources */,
+				91A325A91D965BB800FDCE6B /* AddToDoTableView.swift in Sources */,
 				91C873351D8BC89000FA2EF2 /* StoryboardDefine.swift in Sources */,
 				91C873341D8BC89000FA2EF2 /* ImageDefine.swift in Sources */,
 				91C873331D8BC89000FA2EF2 /* ColorsDefine.swift in Sources */,
+				91B9F38A1D9667C300816AE7 /* Then.swift in Sources */,
 				91D7011C1D8CCA3C006E5741 /* HomeTableViewVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

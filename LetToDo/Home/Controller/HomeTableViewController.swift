@@ -54,7 +54,6 @@ class HomeTableViewController: UITableViewController {
     /// 配置 tableview
     private func configTableView() {
         
-        
         Observable.from(realm.objects(ToDoModel.self))
             .map { (results) -> [HomeListCellItem] in
                 results.flatMap { (model: ToDoModel) -> HomeListCellItem in
@@ -62,14 +61,12 @@ class HomeTableViewController: UITableViewController {
                 }
             }
             .map { (displayToDo) -> [HomeListSectionModel] in
-                [.AddToDoSection(item: [.AddToDo(placeholder: "Add what u want TODO...")]),
-                 .DisplayToDoSection(item: displayToDo)]
+                [.DisplayToDoSection(placeholder: "Add what u want TODO...", item: displayToDo)]
             }
             .bindTo(tableView.rx.items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
         
         skinTableViewDataSource(dataSource)
-        
         
     }
     
@@ -81,12 +78,6 @@ class HomeTableViewController: UITableViewController {
         dataSource.configureCell = { (dataSource, tableView, indexPath, item) in
             
             switch item {
-            case let .AddToDo(placeholder: placeholder):
-                let cell: AddToDoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-                cell.selectionStyle = .none
-                cell.inputBtn.setTitle(placeholder, for: .normal)
-                return cell
-                
             case let .DisplayToDo(taskID: taskID, title: title, isDone: isDone) :
                 let cell: DisplayToDoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
                 cell.selectionStyle = .none
@@ -94,12 +85,9 @@ class HomeTableViewController: UITableViewController {
                 cell.doneBtn.isSelected = isDone
                 cell.taskID = taskID
                 return cell
-               
             }
             
         }
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,9 +95,132 @@ class HomeTableViewController: UITableViewController {
     }
 
 
+    
+}
+
+//MARK: tableView 配置
+extension HomeTableViewController {
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 55
     }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 55
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        guard let view: AddToDoTableView = Bundle.loadNib("AddToDoTableView") else {
+            return nil
+        }
+        
+        return view
+    }
+    
+}
 
+//MARK: 动画效果的实现
+extension HomeTableViewController {
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        guard let cell: DisplayToDoTableViewCell = self.tableView.cellForRow(index: self.tableView.contentOffsetToIndexPath()) else {
+            return
+        }
+        
+        self.tableView.setVisibleCellsAlpha1()
+        cell.bgView.alpha = self.tableView.contentOffsetToCellAlpha()
+        
+    }
+    
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollView.adjustContentOffset()
+    }
+    
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        if (!decelerate) {
+            scrollView.adjustContentOffset()
+        }
+        
+    }
+    
+}
+
+fileprivate extension UIScrollView {
+    
+    /// 调整偏移量
+    func adjustContentOffset() {
+        
+        let y = Int(self.contentOffset.y + 64)
+        let index: Int = Int(y / 55)
+        let addIndex = (y % 55) > 10 ? 1 : 0
+        let offsetY = (index + addIndex) * 55 - 64
+        
+        self.setContentOffset(CGPoint(x: 0, y: offsetY), animated: true)
+        
+    }
+    
+}
+
+fileprivate extension UITableView {
+    
+    
+    
+    /// 根据index 获取cell
+    ///
+    /// - parameter index: 获取index的回调
+    ///
+    /// - returns: cell
+    func cellForRow<T: UITableViewCell>(index: @autoclosure () -> IndexPath) -> T? {
+        
+        return self.cellForRow(at: index()) as? T
+        
+    }
+    
+    
+    /// 根据偏移量计算 IndexPath
+    ///
+    /// - returns: IndexPath
+    func contentOffsetToIndexPath() -> IndexPath {
+        
+        let y = Int(self.contentOffset.y + 64)
+        let index: Int = Int(y / 55)
+        
+        return IndexPath(row: index, section: 0)
+    }
+    
+    
+    
+    /// 根据偏移量转Cell透明度
+    ///
+    /// - returns: 透明度
+    func contentOffsetToCellAlpha() -> CGFloat {
+        
+        let y = Int(self.contentOffset.y + 64)
+        let index: Int = Int(y / 55)
+        
+        let offsetY = (index + 1)  * 55
+        
+        let alpha = CGFloat(offsetY - y) / 55
+        
+        return alpha
+        
+    }
+    
+    /// 将可见的cell透明度设置为1
+    func setVisibleCellsAlpha1() {
+        
+        let _ = self.visibleCells.map { (cell) -> UITableViewCell in
+            guard let displayCell = cell as? DisplayToDoTableViewCell else {
+                return cell
+            }
+            displayCell.bgView.alpha = 1
+            return displayCell
+        }
+        
+    }
+    
 }
 

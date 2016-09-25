@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RealmSwift
 
 class InputToDoView: UIView {
 
@@ -24,8 +25,8 @@ class InputToDoView: UIView {
         let tap = UITapGestureRecognizer()
         tap.rx
             .event
-            .bindNext { _ in
-                self.removeFromSuperview()
+            .bindNext { [unowned self] _ in
+                self.hiddenAnimate()
             }
             .addDisposableTo(disposeBag)
         
@@ -38,7 +39,9 @@ class InputToDoView: UIView {
         
     }
     
-    
+    deinit {
+        print("deinit ----- InputToDoView");
+    }
     
     /// 配置添加按钮
     func configAddBtn() {
@@ -46,22 +49,55 @@ class InputToDoView: UIView {
         addBtn
             .rx
             .tap
-            .filter { self.inputText.text != "" }
-            .map { ToDoModel(taskName: self.inputText.text ?? "") }
+            .filter { [unowned self] in self.inputText.text != "" }
+            .map { [unowned self] in  ToDoModel(taskName: self.inputText.text ?? "") }
+//            .bindNext { [unowned self] model in
+//                
+//                try! realm.write {
+//                    realm.add(model)
+//                }
+////                realm.add(model, update: false)
+//                self.inputText.text = ""
+//                self.hiddenAnimate()
+//                
+////                DispatchQueue.global().async {
+////                    let realm = try! Realm()
+////                    
+////                    realm.beginWrite()
+////                    realm.create(ToDoModel.self, value: model, update: false)
+////                    try! realm.commitWrite()
+////                }
+//                
+//            }
             .bindTo(realm.rx.add())
             .addDisposableTo(disposeBag)
+        
         
         addBtn
             .rx
             .tap
             .shareReplay(1)
-            .filter { self.inputText.text != "" }
-            .bindNext { _ in
+            .filter { [unowned self] in self.inputText.text != "" }
+            .bindNext { [unowned self ] _ in
                 self.inputText.text = ""
-                self.removeFromSuperview()
+                self.hiddenAnimate()
             }
             .addDisposableTo(disposeBag)
         
+    }
+    
+    private func hiddenAnimate () {
+        
+        UIView.animate(withDuration: 0.5, animations: { [unowned self ] in
+            
+            self.alpha = 0
+            self.inputTextView.isHidden = false
+            
+            }, completion: { [unowned self ] (isCompletion) in
+                if (isCompletion) {
+                    self.removeFromSuperview()
+                }
+            })
     }
 
 }

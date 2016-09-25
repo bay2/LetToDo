@@ -1,29 +1,26 @@
 //
-//  AddToDoTableViewCell.swift
+//  AddToDoTableView.swift
 //  LetToDo
 //
-//  Created by xuemincai on 16/9/16.
+//  Created by xuemincai on 2016/9/24.
 //  Copyright © 2016年 xuemincai. All rights reserved.
 //
 
 import UIKit
-import RxCocoa
 import RxSwift
 import EZSwiftExtensions
 
-
-class AddToDoTableViewCell: UITableViewCell {
-    
+class AddToDoTableView: UIView {
     
     @IBOutlet weak var bgView: UIView!
-    @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var inputBtn: UIButton!
     
     private var disposeBag = DisposeBag()
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        bgView.layer.cornerRadius = 2
+        
+        bgView.setCornerRadius(radius: 2)
         bgView.layer.borderColor = UIColor(named: .borderColor).cgColor
         bgView.layer.borderWidth = 0.5
         
@@ -31,23 +28,17 @@ class AddToDoTableViewCell: UITableViewCell {
         
     }
     
-    
     /// 配置输入框
     func configInputText() {
         
         inputBtn
             .rx
             .tap
-            .subscribe { _ in
+            .bindNext {
                 InputToDoView.showInputView()
             }
             .addDisposableTo(disposeBag)
         
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
 
 }
@@ -72,8 +63,7 @@ extension InputToDoView {
             inputView.inputTextView.isHidden = false
         }
         
+        
     }
     
 }
-
-

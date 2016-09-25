@@ -14,7 +14,6 @@ import RxDataSources
 /// - AddToDo:     添加 TODO Cell
 /// - DisplayToDo: 展示 TODO Cell
 enum HomeListCellItem {
-    case AddToDo(placeholder: String)
     case DisplayToDo(taskID: String, title: String, isDone: Bool)
 }
 
@@ -25,8 +24,7 @@ enum HomeListCellItem {
 /// - DisplayToDoSection: 展示 TODO Section
 enum HomeListSectionModel {
     
-    case AddToDoSection(item: [HomeListCellItem])
-    case DisplayToDoSection(item: [HomeListCellItem])
+    case DisplayToDoSection(placeholder: String, item: [HomeListCellItem])
     
 }
 
@@ -35,22 +33,21 @@ extension HomeListSectionModel: SectionModelType {
     typealias Item = HomeListCellItem
     
     var items: [HomeListCellItem] {
-        switch self {
-        case .AddToDoSection(item: let items):
-            return items.map {$0}
-            
-        case .DisplayToDoSection(item: let items):
+        
+        if case let .DisplayToDoSection(_, item: items) = self {
             return items.map {$0}
         }
+        
+        return []
     }
     
     init(original: HomeListSectionModel, items: [Item]) {
-        switch original {
-        case .AddToDoSection(item: _):
-            self = .AddToDoSection(item: items)
-        case .DisplayToDoSection(item: _):
-            self = .DisplayToDoSection(item: items)
+        
+        if case let .DisplayToDoSection(placeholder: placeholder, item: items) = original {
+            self = .DisplayToDoSection(placeholder: placeholder, item: items)
         }
+        
+        self = .DisplayToDoSection(placeholder: "", item: [])
     }
     
 }
