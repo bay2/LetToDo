@@ -1,8 +1,8 @@
 //
-//  HomeTableViewController.swift
+//  ToDoViewController.swift
 //  LetToDo
 //
-//  Created by xuemincai on 16/9/15.
+//  Created by xuemincai on 2016/9/25.
 //  Copyright © 2016年 xuemincai. All rights reserved.
 //
 
@@ -10,27 +10,40 @@ import UIKit
 import RxSwift
 import RxDataSources
 import RxRealm
+import SnapKit
 
+class ToDoViewController: UIViewController {
 
-class HomeTableViewController: UITableViewController {
-    
+    @IBOutlet weak var tableView: UITableView!
     private let disposeBag = DisposeBag()
     
     private var dataSource = RxTableViewSectionedReloadDataSource<HomeListSectionModel>()
     private var sections: [HomeListSectionModel] = []
     
-
+    private let switchBtn = UIButton().then {
+        $0.setImage(#imageLiteral(resourceName: "HomeChange"), for: .normal)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         UIApplication.shared.setStatusBarHidden(false, with: .slide)
         
+        self.tableView.addSubview(switchBtn)
+        switchBtn.snp.makeConstraints { (make) in
+            make.right.bottom.equalTo(self.tableView)
+            make.size.equalTo(CGSize(width: 102, height: 102))
+        }
+        
         stupNavBarItem()
         
         configTableView()
         
+        
+        
     }
-
+    
     
     /// 安装导航栏按钮
     private func stupNavBarItem() {
@@ -53,6 +66,8 @@ class HomeTableViewController: UITableViewController {
     
     /// 配置 tableview
     private func configTableView() {
+        
+        self.tableView.rx.setDelegate(self).addDisposableTo(disposeBag)
         
         Observable.from(realm.objects(ToDoModel.self))
             .map { (results) -> [HomeListCellItem] in
@@ -89,27 +104,28 @@ class HomeTableViewController: UITableViewController {
             
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-
-
     
 }
 
+
 //MARK: tableView 配置
-extension HomeTableViewController {
+extension ToDoViewController: UITableViewDelegate {
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 55
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 55
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         guard let view: AddToDoTableView = Bundle.loadNib("AddToDoTableView") else {
             return nil
@@ -121,9 +137,9 @@ extension HomeTableViewController {
 }
 
 //MARK: 动画效果的实现
-extension HomeTableViewController {
+extension ToDoViewController {
     
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         guard let cell: DisplayToDoTableViewCell = self.tableView.cellForRow(index: self.tableView.contentOffsetToIndexPath()) else {
             return
@@ -134,11 +150,11 @@ extension HomeTableViewController {
         
     }
     
-    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         scrollView.adjustContentOffset()
     }
     
-    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         
         if (!decelerate) {
             scrollView.adjustContentOffset()
@@ -223,4 +239,3 @@ fileprivate extension UITableView {
     }
     
 }
-

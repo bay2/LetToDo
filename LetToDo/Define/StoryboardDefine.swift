@@ -44,21 +44,12 @@ struct StoryboardScene {
   enum LaunchScreen: StoryboardSceneType {
     static let storyboardName = "LaunchScreen"
   }
-  enum Main: String, StoryboardSceneType {
+  enum Main: StoryboardSceneType {
     static let storyboardName = "Main"
 
     static func initialViewController() -> UINavigationController {
       guard let vc = storyboard().instantiateInitialViewController() as? UINavigationController else {
         fatalError("Failed to instantiate initialViewController for \(self.storyboardName)")
-      }
-      return vc
-    }
-
-    case homeTableViewControllerScene = "HomeTableViewController"
-    static func instantiateHomeTableViewController() -> HomeTableViewController {
-      guard let vc = StoryboardScene.Main.homeTableViewControllerScene.viewController() as? HomeTableViewController
-      else {
-        fatalError("ViewController 'HomeTableViewController' is not of the expected class HomeTableViewController.")
       }
       return vc
     }

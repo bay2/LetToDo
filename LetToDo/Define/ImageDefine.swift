@@ -11,10 +11,13 @@
 // swiftlint:disable file_length
 // swiftlint:disable type_body_length
 enum Asset: String {
+  case homeChange = "HomeChange"
+  case launchScreen = "LaunchScreen"
   case navBarMuen = "NavBarMuen"
   case navBarSetting = "NavBarSetting"
   case toDoListAdd = "ToDoListAdd"
   case toDoListDone = "ToDoListDone"
+  case toDoListInProgess = "ToDoListInProgess"
 
   var image: Image {
     return Image(asset: self)

@@ -32,10 +32,9 @@ class InputToDoView: UIView {
         
         self.addGestureRecognizer(tap)
         
-        inputText.configToDoInputStyle()
-        inputText.becomeFirstResponder()
         
         configAddBtn()
+        configInputText()
         
     }
     
@@ -43,49 +42,70 @@ class InputToDoView: UIView {
         print("deinit ----- InputToDoView");
     }
     
-    /// 配置添加按钮
-    func configAddBtn() {
+    
+    /// 配置输入框
+    func configInputText() {
+    
+        inputText.configToDoInputStyle()
+        inputText.becomeFirstResponder()
         
-        addBtn
-            .rx
-            .tap
-            .filter { [unowned self] in self.inputText.text != "" }
-            .map { [unowned self] in  ToDoModel(taskName: self.inputText.text ?? "") }
-//            .bindNext { [unowned self] model in
-//                
-//                try! realm.write {
-//                    realm.add(model)
-//                }
-////                realm.add(model, update: false)
-//                self.inputText.text = ""
-//                self.hiddenAnimate()
-//                
-////                DispatchQueue.global().async {
-////                    let realm = try! Realm()
-////                    
-////                    realm.beginWrite()
-////                    realm.create(ToDoModel.self, value: model, update: false)
-////                    try! realm.commitWrite()
-////                }
-//                
-//            }
-            .bindTo(realm.rx.add())
-            .addDisposableTo(disposeBag)
+//        inputText.rx.controlEvent(.editingDidEndOnExit)
+
         
-        
-        addBtn
-            .rx
-            .tap
-            .shareReplay(1)
-            .filter { [unowned self] in self.inputText.text != "" }
-            .bindNext { [unowned self ] _ in
-                self.inputText.text = ""
-                self.hiddenAnimate()
-            }
-            .addDisposableTo(disposeBag)
         
     }
     
+    /// 配置添加按钮
+    func configAddBtn() {
+        
+        let inputTextObservable = inputText.rx.controlEvent(.editingDidEndOnExit)
+        let addBtnObservable =  addBtn.rx.tap
+        
+        
+        Observable.of(inputTextObservable, addBtnObservable)
+            .merge()
+            .filter{ [unowned self] in self.inputText.text != "" }
+            .map { [unowned self] in  ToDoModel(taskName: self.inputText.text ?? "") }
+            .bindNext { [unowned self] (model) in
+                self.inputText.text = ""
+                self.hiddenAnimate()
+                
+                DispatchQueue.global().async {
+                    let realm = try! Realm()
+                    realm.beginWrite()
+                    realm.add(model)
+                    try! realm.commitWrite()
+                }
+                
+            }
+            .addDisposableTo(disposeBag)
+        
+
+        
+//        addBtn
+//            .rx
+//            .tap
+//            .filter { [unowned self] in self.inputText.text != "" }
+//            .map { [unowned self] in  ToDoModel(taskName: self.inputText.text ?? "") }
+//            .bindTo(realm.rx.add())
+//            .addDisposableTo(disposeBag)
+        
+        
+//        addBtn
+//            .rx
+//            .tap
+//            .shareReplay(1)
+//            .filter { [unowned self] in self.inputText.text != "" }
+//            .bindNext { [unowned self ] _ in
+//                self.inputText.text = ""
+//                self.hiddenAnimate()
+//            }
+//            .addDisposableTo(disposeBag)
+        
+    }
+    
+    
+    /// 隐藏动画
     private func hiddenAnimate () {
         
         UIView.animate(withDuration: 0.5, animations: { [unowned self ] in
