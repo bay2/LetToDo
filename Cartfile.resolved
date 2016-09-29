@@ -1,4 +1,5 @@
 github "goktugyil/EZSwiftExtensions" "4a66ff4ae759cdfdde599cdf98a60da8d1145823"
+github "MortimerGoro/MGSwipeTableCell" "1.5.5"
 github "ReactiveX/RxSwift" "3.0.0-beta.1"
 github "SnapKit/SnapKit" "3.0.1"
 github "facebook/pop" "1.0.9"

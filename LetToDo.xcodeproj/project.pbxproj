@@ -22,6 +22,7 @@
 		91A325A91D965BB800FDCE6B /* AddToDoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A325A81D965BB800FDCE6B /* AddToDoTableView.swift */; };
 		91B9F38A1D9667C300816AE7 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F3891D9667C300816AE7 /* Then.swift */; };
 		91B9F38D1D97AC0C00816AE7 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F38C1D97AC0C00816AE7 /* ToDoViewController.swift */; };
+		91B9F3901D9C8D7900816AE7 /* MGSwipeTableCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B9F38F1D9C8D7900816AE7 /* MGSwipeTableCell.framework */; };
 		91BE646E1D955455001C64EC /* InputToDoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91BE646D1D955455001C64EC /* InputToDoView.xib */; };
 		91BE64701D9558F2001C64EC /* InputToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BE646F1D9558F2001C64EC /* InputToDoView.swift */; };
 		91C695331D918AE000AC88EB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C695321D918AE000AC88EB /* SnapKit.framework */; };
@@ -54,6 +55,7 @@
 		91A325A81D965BB800FDCE6B /* AddToDoTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToDoTableView.swift; sourceTree = "<group>"; };
 		91B9F3891D9667C300816AE7 /* Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		91B9F38C1D97AC0C00816AE7 /* ToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		91B9F38F1D9C8D7900816AE7 /* MGSwipeTableCell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MGSwipeTableCell.framework; path = Carthage/Build/iOS/MGSwipeTableCell.framework; sourceTree = "<group>"; };
 		91BE646D1D955455001C64EC /* InputToDoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputToDoView.xib; sourceTree = "<group>"; };
 		91BE646F1D9558F2001C64EC /* InputToDoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputToDoView.swift; sourceTree = "<group>"; };
 		91C695321D918AE000AC88EB /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91B9F3901D9C8D7900816AE7 /* MGSwipeTableCell.framework in Frameworks */,
 				91A325A51D9607A400FDCE6B /* EZSwiftExtensions.framework in Frameworks */,
 				91E1278F1D9416CF0043B693 /* RxRealm.framework in Frameworks */,
 				91C8733E1D8BE6E000FA2EF2 /* Realm.framework in Frameworks */,
@@ -168,6 +171,7 @@
 		91C873371D8BE6E000FA2EF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91B9F38F1D9C8D7900816AE7 /* MGSwipeTableCell.framework */,
 				91A325A41D9607A400FDCE6B /* EZSwiftExtensions.framework */,
 				91E1278E1D9416CF0043B693 /* RxRealm.framework */,
 				91C695321D918AE000AC88EB /* SnapKit.framework */,
@@ -208,7 +212,8 @@
 				91D7011A1D8CC9F3006E5741 /* ViewModel */,
 				91C873411D8BED9A00FA2EF2 /* View */,
 			);
-			path = Home;
+			name = Home;
+			path = Task;
 			sourceTree = "<group>";
 		};
 		91E1278B1D9416280043B693 /* Controller */ = {
@@ -306,6 +311,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRealm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/EZSwiftExtensions.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MGSwipeTableCell.framework",
 			);
 			outputPaths = (
 			);

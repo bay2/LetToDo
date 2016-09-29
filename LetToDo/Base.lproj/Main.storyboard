@@ -69,7 +69,8 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bwe-Td-G00">
-                                <state key="normal" image="HomeChange"/>
+                                <state key="normal" image="TaskChangeBtn"/>
+                                <state key="highlighted" image="TaskChangeHighlightBtn"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -108,7 +109,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="HomeChange" width="101" height="98"/>
+        <image name="TaskChangeBtn" width="51" height="51"/>
+        <image name="TaskChangeHighlightBtn" width="51" height="51"/>
         <image name="ToDoListDone" width="40" height="40"/>
         <image name="ToDoListInProgess" width="40" height="40"/>
     </resources>
