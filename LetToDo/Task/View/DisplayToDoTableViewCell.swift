@@ -19,11 +19,15 @@ class DisplayToDoTableViewCell: MGSwipeTableCell {
     @IBOutlet weak var cellTitle: UILabel!
     var taskID: String = ""
     
-    var rightSwipeDelBtn = MGSwipeButton(title: "", icon: #imageLiteral(resourceName: "SwipeDelBtn"), backgroundColor: UIColor.clear).then {
-        $0.contentHorizontalAlignment = .left
-        $0.contentVerticalAlignment = .center
-        $0.setPadding(0)
-    }
+    var rightSwipeDelBtn = MGSwipeButton(title: "Delete", backgroundColor: UIColor.clear).then {
+            $0.contentHorizontalAlignment = .center
+            $0.contentVerticalAlignment = .center
+            $0.setPadding(0)
+            $0.setBackgroundImage(#imageLiteral(resourceName: "SwipeDelBtn"), for: .normal)
+            $0.setTitleColor(UIColor.white, for: .normal)
+            $0.frame = CGRect(x: 0, y: 0, w: 90, h: 50)
+            $0.setEdgeInsets(UIEdgeInsets(top: 5, left: -5, bottom: 0, right: 0))
+        }
     
     private var disposeBag = DisposeBag()
     
@@ -45,6 +49,14 @@ class DisplayToDoTableViewCell: MGSwipeTableCell {
     }
     
     func configSwipeBtn() {
+        
+        rightSwipeDelBtn
+            .rxSwipeTap
+            .map { _ in
+                realm.objects(ToDoModel.self).filter("taskID == '\(self.taskID)'")
+            }
+            .bindTo(realm.rx.delete())
+            .addDisposableTo(disposeBag)
         
         self.rightButtons = [rightSwipeDelBtn];
         

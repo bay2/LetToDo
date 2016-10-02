@@ -28,6 +28,9 @@ enum ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ececec"></span>
   /// Alpha: 100% <br/> (0xecececff)
   case borderColor
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ff8282"></span>
+  /// Alpha: 100% <br/> (0xff8282ff)
+  case cellDelBtnColor
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#2089ff"></span>
   /// Alpha: 100% <br/> (0x2089ffff)
   case navBarBackground
@@ -36,6 +39,7 @@ enum ColorName {
     switch self {
     case .addToDoPlaceholderColor: return 0xcee0ffff
     case .borderColor: return 0xecececff
+    case .cellDelBtnColor: return 0xff8282ff
     case .navBarBackground: return 0x2089ffff
     }
   }

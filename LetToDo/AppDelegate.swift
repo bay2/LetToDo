@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().barTintColor = UIColor(named: .navBarBackground)
         
-        UIApplication.shared.setStatusBarHidden(true, with: .none)
+        UIApplication.shared.setStatusBarHidden(false, with: .none)
         
         print(realm.configuration.fileURL?.description)
         

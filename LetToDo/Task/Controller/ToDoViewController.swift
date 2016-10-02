@@ -29,8 +29,6 @@ class ToDoViewController: UIViewController {
         
         configTableView()
         
-        
-        
     }
     
     

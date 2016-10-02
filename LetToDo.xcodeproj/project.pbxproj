@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		910CDB141D9FB6F900FFEE68 /* MGSwipeButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910CDB131D9FB6F900FFEE68 /* MGSwipeButtonExtension.swift */; };
 		910DC3601D8CD8910023D906 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910DC35F1D8CD8910023D906 /* RxDataSources.framework */; };
 		910DC7DD1D91FE200033801A /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910DC7DB1D91FE200033801A /* UITableViewExtension.swift */; };
 		910DC7DE1D91FE200033801A /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910DC7DC1D91FE200033801A /* UITextFieldExtension.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		910CDB131D9FB6F900FFEE68 /* MGSwipeButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSwipeButtonExtension.swift; sourceTree = "<group>"; };
 		910DC35F1D8CD8910023D906 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		910DC7DB1D91FE200033801A /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		910DC7DC1D91FE200033801A /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				910DC7DB1D91FE200033801A /* UITableViewExtension.swift */,
 				910DC7DC1D91FE200033801A /* UITextFieldExtension.swift */,
+				910CDB131D9FB6F900FFEE68 /* MGSwipeButtonExtension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				91BE64701D9558F2001C64EC /* InputToDoView.swift in Sources */,
 				91A325A91D965BB800FDCE6B /* AddToDoTableView.swift in Sources */,
 				91C873351D8BC89000FA2EF2 /* StoryboardDefine.swift in Sources */,
+				910CDB141D9FB6F900FFEE68 /* MGSwipeButtonExtension.swift in Sources */,
 				91B9F38D1D97AC0C00816AE7 /* ToDoViewController.swift in Sources */,
 				91C873341D8BC89000FA2EF2 /* ImageDefine.swift in Sources */,
 				91C873331D8BC89000FA2EF2 /* ColorsDefine.swift in Sources */,

@@ -2,3 +2,4 @@
 NavBarBackground: #2089ff
 BorderColor: #ececec
 AddToDoPlaceholderColor: #cee0ff
+CellDelBtnColor: #FF8282
