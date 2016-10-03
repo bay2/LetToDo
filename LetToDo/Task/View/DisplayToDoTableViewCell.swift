@@ -66,10 +66,19 @@ class DisplayToDoTableViewCell: MGSwipeTableCell {
         
         doneBtn.rx
             .tap
-            .map { ToDoModel(taskID: self.taskID, taskName: self.cellTitle.text ?? "", isDone: !self.doneBtn.isSelected) }
+            .map { [unowned self] in
+                ToDoModel(taskID: self.taskID, taskName: self.cellTitle.text ?? "", isDone: !self.doneBtn.isSelected) }
+            .throttle(100, scheduler: MainScheduler.instance)
             .bindTo(realm.rx.add(update: true))
             .addDisposableTo(disposeBag)
         
+        doneBtn.rx
+            .tap
+            .shareReplay(1)
+            .bindNext { [unowned self] in
+                self.doneBtn.isSelected = !self.doneBtn.isSelected
+            }
+            .addDisposableTo(disposeBag)
         
     }
 

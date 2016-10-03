@@ -18,8 +18,8 @@ class ToDoViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private let disposeBag = DisposeBag()
     
-    private var dataSource = RxTableViewSectionedReloadDataSource<HomeListSectionModel>()
-    private var sections: [HomeListSectionModel] = []
+    private var dataSource = RxTableViewSectionedAnimatedDataSource<TaskListSectionModel>()
+    private var sections: [TaskListSectionModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,18 +56,21 @@ class ToDoViewController: UIViewController {
         
         self.tableView.rx.setDelegate(self).addDisposableTo(disposeBag)
         
-        Observable.from(realm.objects(ToDoModel.self))
-            .map { (results) -> [HomeListCellItem] in
-                results.flatMap { (model: ToDoModel) -> HomeListCellItem in
-                    .DisplayToDo(taskID: model.taskID, title: model.taskName, isDone: model.isDone)
+        Observable.from(realm.objects(ToDoModel.self).filter("isDone == \(false)"))
+            .map { results -> [TaskListCellItem] in
+                results.flatMap{ (model: ToDoModel) -> TaskListCellItem in
+                    TaskListCellItem(taskID: model.taskID, title: model.taskName, isDone: model.isDone)
                 }
             }
-            .map { (displayToDo) -> [HomeListSectionModel] in
-                [.DisplayToDoSection(placeholder: "Add what u want TODO...", item: displayToDo)]
+            .map { (cellModel) -> [TaskListSectionModel] in
+                var sectionModel = TaskListSectionModel(type: .DisplayTaskInfo, cellItem: cellModel)
+                sectionModel.sectionView = Bundle.loadNib("AddToDoTableView")
+                return [sectionModel]
+                
             }
             .bindTo(tableView.rx.items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
-        
+
         skinTableViewDataSource(dataSource)
         
     }
@@ -75,22 +78,22 @@ class ToDoViewController: UIViewController {
     /// 解析数据源
     ///
     /// - parameter dataSource: 数据源
-    private func skinTableViewDataSource(_ dataSource: RxTableViewSectionedReloadDataSource<HomeListSectionModel>) {
+    private func skinTableViewDataSource(_ dataSource: RxTableViewSectionedAnimatedDataSource<TaskListSectionModel>) {
+        
+        dataSource.animationConfiguration = AnimationConfiguration(deleteAnimation: .fade)
         
         dataSource.configureCell = { (dataSource, tableView, indexPath, item) in
             
-            switch item {
-            case let .DisplayToDo(taskID: taskID, title: title, isDone: isDone) :
-                let cell: DisplayToDoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-                cell.selectionStyle = .none
-                cell.cellTitle.text = title
-                cell.doneBtn.isSelected = isDone
-                cell.taskID = taskID
-                
-                return cell
-            }
+            let cell: DisplayToDoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.selectionStyle = .none
+            cell.cellTitle.text = item.title
+            cell.doneBtn.isSelected = item.isDone
+            cell.taskID = item.taskID
+            
+            return cell
             
         }
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -194,8 +197,6 @@ fileprivate extension UITableView {
         
         return IndexPath(row: index, section: 0)
     }
-    
-    
     
     /// 根据偏移量转Cell透明度
     ///
