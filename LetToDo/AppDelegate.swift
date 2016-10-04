@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import RxRealm
+import EZSwiftExtensions
 
 let realm = try! Realm()
 
@@ -20,7 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        UINavigationBar.appearance().barTintColor = UIColor(named: .navBarBackground)
+//        UINavigationBar.appearance().barTintColor = UIColor(named: .navBarBackground)
+//        UINavigationBar.appearance().setBackgroundImage(UIImage.imageWithColor(imageWithColor: UIColor(named: .navBarBackground), size: CGSize(width: ez.screenWidth, height: 64),
+//                                                                               for: .Any,
+//                                                                               barMetrics: .Default)
+        
         
         UIApplication.shared.setStatusBarHidden(false, with: .none)
         
