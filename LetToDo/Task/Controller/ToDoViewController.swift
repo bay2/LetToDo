@@ -12,6 +12,7 @@ import RxDataSources
 import RxRealm
 import SnapKit
 import MGSwipeTableCell
+import IBAnimatable
 
 class ToDoViewController: UIViewController {
 

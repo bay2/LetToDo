@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 import RxRealm
 import EZSwiftExtensions
+import IBAnimatable
 
 let realm = try! Realm()
 

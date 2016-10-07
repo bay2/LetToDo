@@ -9,7 +9,7 @@
         <!--To Do View Controller-->
         <scene sceneID="DJP-Im-mMO">
             <objects>
-                <viewController id="SBK-O2-o8V" customClass="ToDoViewController" customModule="LetToDo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SBK-O2-o8V" customClass="ToDoViewController" customModule="LetToDo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZvC-1r-IKY"/>
                         <viewControllerLayoutGuide type="bottom" id="9JY-7G-NMq"/>
@@ -111,7 +111,6 @@
         <!--Home Collection View Controller-->
         <scene sceneID="Zwm-8Y-luB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oGN-Un-pDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <collectionViewController id="rAL-JG-WF4" customClass="HomeCollectionViewController" customModule="LetToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="HGa-Pn-UFx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -136,6 +135,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="Thm-qb-lCw"/>
                 </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oGN-Un-pDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="288.80000000000001" y="-11.244377811094454"/>
         </scene>

@@ -3,5 +3,4 @@ github "RxSwiftCommunity/RxDataSources" "1.0.0-beta.2"
 github "RxSwiftCommunity/RxRealm" "master"
 github "SnapKit/SnapKit"  ~> 3.0.0
 github "goktugyil/EZSwiftExtensions" "master"
-github "facebook/pop" ~> 1.0.9
 github "MortimerGoro/MGSwipeTableCell" ~> 1.5.5

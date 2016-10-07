@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -36,6 +37,9 @@
                                 <state key="normal" title="...">
                                     <color key="titleColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tap:" destination="gTV-IL-0wX" eventType="touchUpInside" id="v9A-Ws-M15"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,16 +52,79 @@
                             <constraint firstItem="Xts-0W-VBL" firstAttribute="top" secondItem="HA7-5B-vZ1" secondAttribute="top" constant="10" id="fmk-7P-mWM"/>
                         </constraints>
                     </view>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Zl-HD-v6W">
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LCd-kd-s6t" customClass="AnimatableView" customModule="IBAnimatable">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sI-IC-XKA">
+                                        <state key="normal" title="Edit">
+                                            <color key="titleColor" red="0.34509803921568627" green="0.34509803921568627" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="0sI-IC-XKA" secondAttribute="bottom" constant="8" id="7gZ-G1-ZBF"/>
+                                    <constraint firstItem="0sI-IC-XKA" firstAttribute="centerX" secondItem="LCd-kd-s6t" secondAttribute="centerX" id="wM2-Eu-6oA"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tcc-LS-nsP" userLabel="CenterLineView" customClass="AnimatableView" customModule="IBAnimatable">
+                                <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="uMR-8e-yFN"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKn-zX-lXe" customClass="AnimatableView" customModule="IBAnimatable">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88y-VN-Ayd">
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="88y-VN-Ayd" firstAttribute="top" secondItem="dKn-zX-lXe" secondAttribute="top" constant="8" id="7pP-iE-adb"/>
+                                    <constraint firstItem="88y-VN-Ayd" firstAttribute="centerX" secondItem="dKn-zX-lXe" secondAttribute="centerX" id="bpQ-V8-fvc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dKn-zX-lXe" firstAttribute="height" secondItem="LCd-kd-s6t" secondAttribute="height" id="0HV-vy-KqJ"/>
+                            <constraint firstItem="LCd-kd-s6t" firstAttribute="leading" secondItem="3Zl-HD-v6W" secondAttribute="leading" id="4oJ-db-Juq"/>
+                            <constraint firstItem="LCd-kd-s6t" firstAttribute="top" secondItem="3Zl-HD-v6W" secondAttribute="top" id="FMu-tn-qFv"/>
+                            <constraint firstItem="Tcc-LS-nsP" firstAttribute="top" secondItem="LCd-kd-s6t" secondAttribute="bottom" id="Qj7-Tj-8kv"/>
+                            <constraint firstItem="Tcc-LS-nsP" firstAttribute="width" secondItem="3Zl-HD-v6W" secondAttribute="width" multiplier="0.6" id="Zxd-eX-JRb"/>
+                            <constraint firstAttribute="trailing" secondItem="LCd-kd-s6t" secondAttribute="trailing" id="bVp-MA-wVs"/>
+                            <constraint firstItem="Tcc-LS-nsP" firstAttribute="centerX" secondItem="3Zl-HD-v6W" secondAttribute="centerX" id="ePH-hH-I2E"/>
+                            <constraint firstAttribute="trailing" secondItem="dKn-zX-lXe" secondAttribute="trailing" id="gPV-5C-5ys"/>
+                            <constraint firstItem="dKn-zX-lXe" firstAttribute="leading" secondItem="3Zl-HD-v6W" secondAttribute="leading" id="hrx-KG-nj5"/>
+                            <constraint firstItem="dKn-zX-lXe" firstAttribute="top" secondItem="Tcc-LS-nsP" secondAttribute="bottom" id="qXn-OI-YIA"/>
+                            <constraint firstItem="Tcc-LS-nsP" firstAttribute="centerY" secondItem="3Zl-HD-v6W" secondAttribute="centerY" id="rnE-QU-JuF"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="HA7-5B-vZ1" secondAttribute="bottom" id="2RF-7g-zFJ"/>
+                <constraint firstItem="3Zl-HD-v6W" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="M3K-yn-dzM"/>
+                <constraint firstAttribute="bottom" secondItem="3Zl-HD-v6W" secondAttribute="bottom" id="U7J-8Z-ctf"/>
                 <constraint firstAttribute="trailing" secondItem="HA7-5B-vZ1" secondAttribute="trailing" constant="2.5" id="VIX-0o-eZY"/>
+                <constraint firstItem="3Zl-HD-v6W" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="nBe-8a-rxy"/>
                 <constraint firstItem="HA7-5B-vZ1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="pBV-vB-f9B"/>
+                <constraint firstAttribute="trailing" secondItem="3Zl-HD-v6W" secondAttribute="trailing" constant="2.5" id="sqn-6f-gWq"/>
                 <constraint firstItem="HA7-5B-vZ1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="tTr-v3-QNC"/>
             </constraints>
             <size key="customSize" width="180" height="160"/>
+            <connections>
+                <outlet property="centerLineView" destination="Tcc-LS-nsP" id="NFU-o9-4TI"/>
+                <outlet property="editBottomView" destination="dKn-zX-lXe" id="cuC-v1-ltj"/>
+                <outlet property="editTopView" destination="LCd-kd-s6t" id="00d-7u-Vqb"/>
+                <outlet property="editView" destination="3Zl-HD-v6W" id="geh-fM-oPR"/>
+                <outlet property="moreBtn" destination="Xts-0W-VBL" id="Iat-vF-mBN"/>
+            </connections>
             <point key="canvasLocation" x="96.75" y="158.5"/>
         </collectionViewCell>
     </objects>

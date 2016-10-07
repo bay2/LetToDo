@@ -8,6 +8,11 @@
 
 import UIKit
 import EZSwiftExtensions
+import IBAnimatable
+
+extension AnimatableView {
+    
+}
 
 private let reuseIdentifier = "HomeGroupCollectionViewCell"
 
@@ -16,29 +21,28 @@ class HomeCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-//    self.navigationController?.navigationBar.setBackgroundImage(), forBarPosition: .any, barMetrics: .Default)
-        
-        
-        let backgroundImage = UIImage.imageWithColor(imageWithColor: UIColor(named: .navBarBackground), size: CGSize(width: ez.screenWidth, height: 64))
-            
-            
-        self.navigationController?.navigationBar.setBackgroundImage(backgroundImage, for: .any, barMetrics: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(imageWithColor: UIColor(named: .navBarBackground), size: CGSize(width: ez.screenWidth, height: 1))
-        self.navigationController?.navigationBar.isTranslucent = false
-        
-        
+        registerCell()
+        configNavigationBar()
 
-        // Register cell classes
+    }
+    
+    
+    /// register Cell
+    func registerCell() {
         self.collectionView!.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         
         self.collectionView!.register(UINib(nibName: "HomeGroupCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HomeGroupCollectionReusableView")
-
-        // Do any additional setup after loading the view.
+    }
+    
+    
+    /// 配置 Nav Bar
+    func configNavigationBar() {
         
-//        self.collectionView!.collectionV
+        let backgroundImage = UIImage.imageWithColor(imageWithColor: UIColor(named: .navBarBackground), size: CGSize(width: ez.screenWidth, height: 64))
+        
+        self.navigationController?.navigationBar.setBackgroundImage(backgroundImage, for: .any, barMetrics: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(imageWithColor: UIColor(named: .navBarBackground), size: CGSize(width: ez.screenWidth, height: 1))
+        self.navigationController?.navigationBar.isTranslucent = false
         
     }
 
@@ -61,8 +65,6 @@ class HomeCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
-        // Configure the cell
-    
         return cell
     }
     
@@ -78,17 +80,11 @@ class HomeCollectionViewController: UICollectionViewController {
 extension HomeCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        print(CGSize(width: ez.screenWidth * 0.5, height: ez.screenWidth * 0.5 * 0.88))
-        
         return CGSize(width: ez.screenWidth * 0.5, height: ez.screenWidth * 0.5 * 0.88)
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        
         return CGSize(width: ez.screenWidth, height: 104)
-        
     }
     
 }
