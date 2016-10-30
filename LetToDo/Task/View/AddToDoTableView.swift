@@ -19,18 +19,19 @@ class AddToDoTableView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         bgView.setCornerRadius(radius: 2)
         bgView.layer.borderColor = UIColor(named: .borderColor).cgColor
         bgView.layer.borderWidth = 0.5
         
         configInputText()
-        
+
+
     }
     
     /// 配置输入框
     func configInputText() {
-        
+
         inputBtn
             .rx
             .tap

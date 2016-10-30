@@ -1,6 +1,6 @@
-github "ReactiveX/RxSwift" "3.0.0-beta.1"
-github "RxSwiftCommunity/RxDataSources" "1.0.0-beta.2"
-github "RxSwiftCommunity/RxRealm" "master"
+github "RxSwiftCommunity/RxDataSources" ~> 1.0.1
+github "RxSwiftCommunity/RxRealm" ~> 0.3.0
 github "SnapKit/SnapKit"  ~> 3.0.0
-github "goktugyil/EZSwiftExtensions" "master"
+github "goktugyil/EZSwiftExtensions" ~> 1.7
 github "MortimerGoro/MGSwipeTableCell" ~> 1.5.5
+github "onevcat/RandomColorSwift" ~> 1.0.0

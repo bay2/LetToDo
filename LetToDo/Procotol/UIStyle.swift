@@ -7,29 +7,29 @@
 //
 
 import UIKit
+import EZSwiftExtensions
 
 
-/// TODO 输入框样式
-protocol ToDoInputTextFieldStyle {
-    func configToDoInputStyle()
+/// 配置Nav bar 样式
+protocol NavigationBarStyle {
+    func configNavigationBar()
 }
 
-extension ToDoInputTextFieldStyle where Self: UITextField {
+extension NavigationBarStyle where Self: UIViewController {
     
-    
-    /// TODO 输入样式
-    func configToDoInputStyle() {
+    /// 配置 Nav Bar
+    func configNavigationBar() {
         
-        self.setPlaceholderColor(UIColor(named: .addToDoPlaceholderColor))
-        self.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "",
-                                                             attributes: [NSForegroundColorAttributeName: UIColor(named: .addToDoPlaceholderColor),
-                                                                          NSFontAttributeName: UIFont.italicSystemFont(ofSize: 14)]);
+        let backgroundImage = UIImage.imageWithColor(imageWithColor: UIColor(named: .navBarBackground), size: CGSize(width: ez.screenWidth, height: 64))
+        
+        self.navigationController?.navigationBar.setBackgroundImage(backgroundImage, for: .any, barMetrics: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(imageWithColor: UIColor(named: .navBarBackground), size: CGSize(width: ez.screenWidth, height: 1))
+        self.navigationController?.navigationBar.isTranslucent = false
         
     }
     
 }
 
-extension  UITextField: ToDoInputTextFieldStyle { }
-
+extension UIViewController: NavigationBarStyle { }
 
 

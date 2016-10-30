@@ -9,10 +9,11 @@
 import UIKit
 import RxSwift
 import RealmSwift
+import IBAnimatable
 
 class InputToDoView: UIView {
 
-    @IBOutlet private weak var inputText: UITextField!
+    @IBOutlet private weak var inputText: AnimatableTextField!
     @IBOutlet private weak var addBtn: UIButton!
     @IBOutlet weak var inputTextView: UIView!
     
@@ -23,6 +24,7 @@ class InputToDoView: UIView {
         
         self.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer()
+        
         tap.rx
             .event
             .bindNext { [unowned self] _ in
@@ -32,9 +34,7 @@ class InputToDoView: UIView {
         
         self.addGestureRecognizer(tap)
         
-        
-        configAddBtn()
-        configInputText()
+        inputText.becomeFirstResponder()
         
     }
     
@@ -43,13 +43,6 @@ class InputToDoView: UIView {
     }
     
     
-    /// 配置输入框
-    func configInputText() {
-    
-        inputText.configToDoInputStyle()
-        inputText.becomeFirstResponder()
-        
-    }
     
     /// 配置添加按钮
     func configAddBtn() {

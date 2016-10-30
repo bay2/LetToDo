@@ -7,22 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91053EFA1DBB4E6D00F988F1 /* RandomColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91053EF91DBB4E6D00F988F1 /* RandomColor.framework */; };
 		910CDB141D9FB6F900FFEE68 /* MGSwipeButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910CDB131D9FB6F900FFEE68 /* MGSwipeButtonExtension.swift */; };
 		910DC3601D8CD8910023D906 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910DC35F1D8CD8910023D906 /* RxDataSources.framework */; };
 		910DC7DD1D91FE200033801A /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910DC7DB1D91FE200033801A /* UITableViewExtension.swift */; };
-		910DC7DE1D91FE200033801A /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910DC7DC1D91FE200033801A /* UITextFieldExtension.swift */; };
 		911021E81D9196B700BF7FA7 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911021E71D9196B700BF7FA7 /* ToDoModel.swift */; };
 		912A71691D8D2DB10064275A /* DisplayToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A71681D8D2DB10064275A /* DisplayToDoTableViewCell.swift */; };
 		912E6E861DA35F0C00293DE1 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E6E851DA35F0C00293DE1 /* UIImageExtension.swift */; };
+		912FB9AA1DB597B80061D77B /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912FB9A91DB597B80061D77B /* AddGroupViewController.swift */; };
 		9186808D1D88C24C00CF5187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9186808C1D88C24C00CF5187 /* AppDelegate.swift */; };
-		918680921D88C24C00CF5187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918680901D88C24C00CF5187 /* Main.storyboard */; };
 		918680941D88C24C00CF5187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 918680931D88C24C00CF5187 /* Assets.xcassets */; };
 		918680971D88C24C00CF5187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918680951D88C24C00CF5187 /* LaunchScreen.storyboard */; };
+		91970D8F1DB12A9900704A27 /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91970D8E1DB12A9900704A27 /* AssociatedObject.swift */; };
+		91970D931DB12EA600704A27 /* UIViewExitension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91970D921DB12EA600704A27 /* UIViewExitension.swift */; };
 		91A325A31D956BBD00FDCE6B /* UIStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A325A21D956BBD00FDCE6B /* UIStyle.swift */; };
 		91A325A51D9607A400FDCE6B /* EZSwiftExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A325A41D9607A400FDCE6B /* EZSwiftExtensions.framework */; };
 		91A325A71D965ABF00FDCE6B /* AddToDoTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91A325A61D965ABF00FDCE6B /* AddToDoTableView.xib */; };
 		91A325A91D965BB800FDCE6B /* AddToDoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A325A81D965BB800FDCE6B /* AddToDoTableView.swift */; };
 		91AB019C1DA74F5C0069A3AD /* HomeGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AB019B1DA74F5C0069A3AD /* HomeGroupViewController.swift */; };
+		91AC307B1DC6420B00B8D14A /* ZoomTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC307A1DC6420B00B8D14A /* ZoomTransitioning.swift */; };
+		91AC307D1DC64A9100B8D14A /* EditGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC307C1DC64A9100B8D14A /* EditGroupViewController.swift */; };
+		91AC307F1DC6B50300B8D14A /* Task.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AC307E1DC6B50300B8D14A /* Task.storyboard */; };
+		91AC30811DC6B5D800B8D14A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AC30801DC6B5D800B8D14A /* Home.storyboard */; };
 		91B9F38A1D9667C300816AE7 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F3891D9667C300816AE7 /* Then.swift */; };
 		91B9F38D1D97AC0C00816AE7 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9F38C1D97AC0C00816AE7 /* ToDoViewController.swift */; };
 		91B9F3901D9C8D7900816AE7 /* MGSwipeTableCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B9F38F1D9C8D7900816AE7 /* MGSwipeTableCell.framework */; };
@@ -60,24 +66,30 @@
 
 /* Begin PBXFileReference section */
 		252FFFF8CFC404B0760CA4BB /* Pods-LetToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetToDo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetToDo/Pods-LetToDo.release.xcconfig"; sourceTree = "<group>"; };
+		91053EF91DBB4E6D00F988F1 /* RandomColor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RandomColor.framework; path = Carthage/Build/iOS/RandomColor.framework; sourceTree = "<group>"; };
 		910CDB131D9FB6F900FFEE68 /* MGSwipeButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSwipeButtonExtension.swift; sourceTree = "<group>"; };
 		910DC35F1D8CD8910023D906 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		910DC7DB1D91FE200033801A /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
-		910DC7DC1D91FE200033801A /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		911021E71D9196B700BF7FA7 /* ToDoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
 		912A71681D8D2DB10064275A /* DisplayToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayToDoTableViewCell.swift; sourceTree = "<group>"; };
 		912E6E851DA35F0C00293DE1 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		912FB9A91DB597B80061D77B /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 		918680891D88C24C00CF5187 /* LetToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9186808C1D88C24C00CF5187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		918680911D88C24C00CF5187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		918680931D88C24C00CF5187 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		918680961D88C24C00CF5187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		918680981D88C24C00CF5187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91970D8E1DB12A9900704A27 /* AssociatedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedObject.swift; sourceTree = "<group>"; };
+		91970D921DB12EA600704A27 /* UIViewExitension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExitension.swift; sourceTree = "<group>"; };
 		91A325A21D956BBD00FDCE6B /* UIStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStyle.swift; sourceTree = "<group>"; };
 		91A325A41D9607A400FDCE6B /* EZSwiftExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EZSwiftExtensions.framework; path = Carthage/Build/iOS/EZSwiftExtensions.framework; sourceTree = "<group>"; };
 		91A325A61D965ABF00FDCE6B /* AddToDoTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddToDoTableView.xib; sourceTree = "<group>"; };
 		91A325A81D965BB800FDCE6B /* AddToDoTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToDoTableView.swift; sourceTree = "<group>"; };
 		91AB019B1DA74F5C0069A3AD /* HomeGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeGroupViewController.swift; sourceTree = "<group>"; };
+		91AC307A1DC6420B00B8D14A /* ZoomTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomTransitioning.swift; sourceTree = "<group>"; };
+		91AC307C1DC64A9100B8D14A /* EditGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGroupViewController.swift; sourceTree = "<group>"; };
+		91AC307E1DC6B50300B8D14A /* Task.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Task.storyboard; sourceTree = "<group>"; };
+		91AC30801DC6B5D800B8D14A /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		91B9F3891D9667C300816AE7 /* Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		91B9F38C1D97AC0C00816AE7 /* ToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		91B9F38F1D9C8D7900816AE7 /* MGSwipeTableCell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MGSwipeTableCell.framework; path = Carthage/Build/iOS/MGSwipeTableCell.framework; sourceTree = "<group>"; };
@@ -106,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91053EFA1DBB4E6D00F988F1 /* RandomColor.framework in Frameworks */,
 				91B9F3901D9C8D7900816AE7 /* MGSwipeTableCell.framework in Frameworks */,
 				91A325A51D9607A400FDCE6B /* EZSwiftExtensions.framework in Frameworks */,
 				91E1278F1D9416CF0043B693 /* RxRealm.framework in Frameworks */,
@@ -126,9 +139,9 @@
 			isa = PBXGroup;
 			children = (
 				910DC7DB1D91FE200033801A /* UITableViewExtension.swift */,
-				910DC7DC1D91FE200033801A /* UITextFieldExtension.swift */,
 				910CDB131D9FB6F900FFEE68 /* MGSwipeButtonExtension.swift */,
 				912E6E851DA35F0C00293DE1 /* UIImageExtension.swift */,
+				91970D921DB12EA600704A27 /* UIViewExitension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -162,13 +175,14 @@
 		9186808B1D88C24C00CF5187 /* LetToDo */ = {
 			isa = PBXGroup;
 			children = (
-				91AEB79E1DA335F300BDB7B4 /* Home */,
+				91AC30791DC641E000B8D14A /* Transitioning */,
 				91C873361D8BCFDC00FA2EF2 /* Protocol */,
 				91C8732D1D8BC38E00FA2EF2 /* Define */,
+				91970D8D1DB12A7D00704A27 /* Foundation */,
 				91C8732C1D8BBFD100FA2EF2 /* Extensions */,
+				91AEB79E1DA335F300BDB7B4 /* Home */,
 				91DA7E1B1D8AE1D700E1C38E /* Task */,
 				9186808C1D88C24C00CF5187 /* AppDelegate.swift */,
-				918680901D88C24C00CF5187 /* Main.storyboard */,
 				918680931D88C24C00CF5187 /* Assets.xcassets */,
 				918680951D88C24C00CF5187 /* LaunchScreen.storyboard */,
 				918680981D88C24C00CF5187 /* Info.plist */,
@@ -176,17 +190,37 @@
 			path = LetToDo;
 			sourceTree = "<group>";
 		};
+		91970D8D1DB12A7D00704A27 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				91970D8E1DB12A9900704A27 /* AssociatedObject.swift */,
+			);
+			name = Foundation;
+			path = LetToDo/Foundation;
+			sourceTree = SOURCE_ROOT;
+		};
 		91AB019A1DA74F450069A3AD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				91AB019B1DA74F5C0069A3AD /* HomeGroupViewController.swift */,
+				912FB9A91DB597B80061D77B /* AddGroupViewController.swift */,
+				91AC307C1DC64A9100B8D14A /* EditGroupViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		91AC30791DC641E000B8D14A /* Transitioning */ = {
+			isa = PBXGroup;
+			children = (
+				91AC307A1DC6420B00B8D14A /* ZoomTransitioning.swift */,
+			);
+			path = Transitioning;
 			sourceTree = "<group>";
 		};
 		91AEB79E1DA335F300BDB7B4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				91AC30801DC6B5D800B8D14A /* Home.storyboard */,
 				91AB019A1DA74F450069A3AD /* Controller */,
 				91CB03011DA34B5B00028EB8 /* View */,
 			);
@@ -224,6 +258,7 @@
 		91C873371D8BE6E000FA2EF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91053EF91DBB4E6D00F988F1 /* RandomColor.framework */,
 				91B9F38F1D9C8D7900816AE7 /* MGSwipeTableCell.framework */,
 				91A325A41D9607A400FDCE6B /* EZSwiftExtensions.framework */,
 				91E1278E1D9416CF0043B693 /* RxRealm.framework */,
@@ -276,6 +311,7 @@
 				911021E61D91962A00BF7FA7 /* Model */,
 				91D7011A1D8CC9F3006E5741 /* ViewModel */,
 				91C873411D8BED9A00FA2EF2 /* View */,
+				91AC307E1DC6B50300B8D14A /* Task.storyboard */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -329,7 +365,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = xuemincai;
 				TargetAttributes = {
 					918680881D88C24C00CF5187 = {
@@ -364,12 +400,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				91A325A71D965ABF00FDCE6B /* AddToDoTableView.xib in Resources */,
+				91AC307F1DC6B50300B8D14A /* Task.storyboard in Resources */,
 				918680971D88C24C00CF5187 /* LaunchScreen.storyboard in Resources */,
 				918680941D88C24C00CF5187 /* Assets.xcassets in Resources */,
-				918680921D88C24C00CF5187 /* Main.storyboard in Resources */,
 				91CB030D1DA3563C00028EB8 /* HomeGroupCollectionReusableView.xib in Resources */,
 				91BE646E1D955455001C64EC /* InputToDoView.xib in Resources */,
 				91CB03071DA34B7700028EB8 /* HomeGroupCollectionViewCell.xib in Resources */,
+				91AC30811DC6B5D800B8D14A /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +458,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxRealm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/EZSwiftExtensions.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MGSwipeTableCell.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RandomColor.framework",
 			);
 			outputPaths = (
 			);
@@ -450,22 +488,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				912FB9AA1DB597B80061D77B /* AddGroupViewController.swift in Sources */,
+				91AC307B1DC6420B00B8D14A /* ZoomTransitioning.swift in Sources */,
 				910DC7DD1D91FE200033801A /* UITableViewExtension.swift in Sources */,
 				91A325A31D956BBD00FDCE6B /* UIStyle.swift in Sources */,
 				912A71691D8D2DB10064275A /* DisplayToDoTableViewCell.swift in Sources */,
 				911021E81D9196B700BF7FA7 /* ToDoModel.swift in Sources */,
-				910DC7DE1D91FE200033801A /* UITextFieldExtension.swift in Sources */,
 				9186808D1D88C24C00CF5187 /* AppDelegate.swift in Sources */,
 				91BE64701D9558F2001C64EC /* InputToDoView.swift in Sources */,
 				91A325A91D965BB800FDCE6B /* AddToDoTableView.swift in Sources */,
+				91AC307D1DC64A9100B8D14A /* EditGroupViewController.swift in Sources */,
 				91C873351D8BC89000FA2EF2 /* StoryboardDefine.swift in Sources */,
 				910CDB141D9FB6F900FFEE68 /* MGSwipeButtonExtension.swift in Sources */,
 				91B9F38D1D97AC0C00816AE7 /* ToDoViewController.swift in Sources */,
 				91C873341D8BC89000FA2EF2 /* ImageDefine.swift in Sources */,
+				91970D931DB12EA600704A27 /* UIViewExitension.swift in Sources */,
 				91AB019C1DA74F5C0069A3AD /* HomeGroupViewController.swift in Sources */,
 				912E6E861DA35F0C00293DE1 /* UIImageExtension.swift in Sources */,
 				91CB03061DA34B7700028EB8 /* HomeGroupCollectionViewCell.swift in Sources */,
 				91C873331D8BC89000FA2EF2 /* ColorsDefine.swift in Sources */,
+				91970D8F1DB12A9900704A27 /* AssociatedObject.swift in Sources */,
 				91B9F38A1D9667C300816AE7 /* Then.swift in Sources */,
 				91CB030C1DA3563C00028EB8 /* HomeGroupCollectionReusableView.swift in Sources */,
 				91D7011C1D8CCA3C006E5741 /* HomeTableViewVM.swift in Sources */,
@@ -475,14 +517,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		918680901D88C24C00CF5187 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				918680911D88C24C00CF5187 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		918680951D88C24C00CF5187 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -512,6 +546,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -534,7 +569,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -561,6 +596,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -577,7 +613,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -589,6 +625,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E03A70BF4A1E5440ABCCA0B1 /* Pods-LetToDo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JZ264TB6A5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -609,6 +646,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 252FFFF8CFC404B0760CA4BB /* Pods-LetToDo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JZ264TB6A5;
 				FRAMEWORK_SEARCH_PATHS = (

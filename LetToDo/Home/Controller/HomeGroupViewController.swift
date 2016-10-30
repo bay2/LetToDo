@@ -8,6 +8,9 @@
 
 import UIKit
 import EZSwiftExtensions
+import IBAnimatable
+import RxSwift
+import SnapKit
 
 fileprivate let reuseIdentifier = "HomeGroupCollectionViewCell"
 fileprivate let reusableViewIdentifier = "HomeGroupCollectionReusableView"
@@ -15,6 +18,19 @@ fileprivate let reusableViewIdentifier = "HomeGroupCollectionReusableView"
 class HomeGroupViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+//    lazy var addGroupView: AddGroupView = {
+//        
+//        guard let view: AddGroupView = Bundle.loadNib("AddGroupView") else {
+//            return AddGroupView()
+//        }
+//        
+//        return view
+//        
+//    }()
+
+    
+    private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +42,7 @@ class HomeGroupViewController: UIViewController {
         collectionView.dataSource = self
         
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,17 +57,7 @@ class HomeGroupViewController: UIViewController {
         self.collectionView.register(UINib(nibName: reusableViewIdentifier, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: reusableViewIdentifier)
     }
     
-    
-    /// 配置 Nav Bar
-    func configNavigationBar() {
-        
-        let backgroundImage = UIImage.imageWithColor(imageWithColor: UIColor(named: .navBarBackground), size: CGSize(width: ez.screenWidth, height: 64))
-        
-        self.navigationController?.navigationBar.setBackgroundImage(backgroundImage, for: .any, barMetrics: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage.imageWithColor(imageWithColor: UIColor(named: .navBarBackground), size: CGSize(width: ez.screenWidth, height: 1))
-        self.navigationController?.navigationBar.isTranslucent = false
-        
-    }
+
 
 }
 

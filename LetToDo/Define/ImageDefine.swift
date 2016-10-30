@@ -14,6 +14,7 @@ enum Asset: String {
   case toDoListAdd = "ToDoListAdd"
   case toDoListDone = "ToDoListDone"
   case toDoListInProgess = "ToDoListInProgess"
+  case homeAdd = "HomeAdd"
   case launchScreen = "LaunchScreen"
   case navBarMuen = "NavBarMuen"
   case navBarSetting = "NavBarSetting"

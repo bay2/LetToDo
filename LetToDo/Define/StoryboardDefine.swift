@@ -41,11 +41,8 @@ extension UIViewController {
 // swiftlint:disable type_body_length
 
 struct StoryboardScene {
-  enum LaunchScreen: StoryboardSceneType {
-    static let storyboardName = "LaunchScreen"
-  }
-  enum Main: StoryboardSceneType {
-    static let storyboardName = "Main"
+  enum Home: String, StoryboardSceneType {
+    static let storyboardName = "Home"
 
     static func initialViewController() -> UINavigationController {
       guard let vc = storyboard().instantiateInitialViewController() as? UINavigationController else {
@@ -53,6 +50,18 @@ struct StoryboardScene {
       }
       return vc
     }
+
+    case editGroupViewControllerScene = "EditGroupViewController"
+    static func instantiateEditGroupViewController() -> EditGroupViewController {
+      guard let vc = StoryboardScene.Home.editGroupViewControllerScene.viewController() as? EditGroupViewController
+      else {
+        fatalError("ViewController 'EditGroupViewController' is not of the expected class EditGroupViewController.")
+      }
+      return vc
+    }
+  }
+  enum LaunchScreen: StoryboardSceneType {
+    static let storyboardName = "LaunchScreen"
   }
 }
 

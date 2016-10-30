@@ -20,7 +20,6 @@ extension UIImage {
     static func imageWithColor(imageWithColor color: UIColor, size: CGSize) -> UIImage? {
         
         UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
-//        UIGraphicsBeginImageContext(size)
         let context = UIGraphicsGetCurrentContext()
         
         context?.setFillColor(color.cgColor)
