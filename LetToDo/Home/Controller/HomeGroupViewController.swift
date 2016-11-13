@@ -11,6 +11,7 @@ import EZSwiftExtensions
 import IBAnimatable
 import RxSwift
 import SnapKit
+import RxDataSources
 
 fileprivate let reuseIdentifier = "HomeGroupCollectionViewCell"
 fileprivate let reusableViewIdentifier = "HomeGroupCollectionReusableView"
@@ -19,16 +20,8 @@ class HomeGroupViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-//    lazy var addGroupView: AddGroupView = {
-//        
-//        guard let view: AddGroupView = Bundle.loadNib("AddGroupView") else {
-//            return AddGroupView()
-//        }
-//        
-//        return view
-//        
-//    }()
-
+    private lazy var dataSources = RxCollectionViewSectionedAnimatedDataSource<GroupSectionViewModel>()
+    
     
     private var disposeBag = DisposeBag()
     
@@ -38,8 +31,44 @@ class HomeGroupViewController: UIViewController {
         registerCell()
         configNavigationBar()
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        dataSources.configureCell = {(data, collectionView, indexPath, item) in
+            
+            let cell: HomeGroupCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.groupTitle.text = item.groupTitle
+            cell.groupTitle.textColor = item.TitleColor
+            cell.itemLab.text = "Item \(item.taskNum)"
+            cell.groupID = item.groupID
+            
+            return cell
+            
+        }
+        
+        dataSources.supplementaryViewFactory = { (data, collectionView, kind, indexPath) in
+            return collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: reusableViewIdentifier, for: indexPath)
+        }
+        
+        
+        
+        Observable.from(realm.objects(GroupModel.self))
+            .map { (results) -> [GroupViewModel] in
+                
+                results.flatMap { model -> GroupViewModel in
+                    GroupViewModel(model: model)
+                }
+     
+            }
+            .map { (items) -> [GroupSectionViewModel] in
+                [GroupSectionViewModel(sectionID: "", groups: items)]
+            }
+            .bindTo(collectionView.rx.items(dataSource: dataSources))
+            .addDisposableTo(disposeBag)
+        
+        collectionView
+            .rx
+            .setDelegate(self)
+            .addDisposableTo(disposeBag)
+        
+        
         
     }
     
@@ -61,28 +90,6 @@ class HomeGroupViewController: UIViewController {
 
 }
 
-extension HomeGroupViewController: UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        return collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: reusableViewIdentifier, for: indexPath)
-    }
-    
-}
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension HomeGroupViewController: UICollectionViewDelegateFlowLayout {
@@ -96,3 +103,5 @@ extension HomeGroupViewController: UICollectionViewDelegateFlowLayout {
     }
     
 }
+
+

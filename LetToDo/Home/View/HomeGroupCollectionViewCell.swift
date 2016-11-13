@@ -21,11 +21,13 @@ class HomeGroupCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var moreBtn: UIButton!
     @IBOutlet weak var mainView: AnimatableView!
     @IBOutlet weak var groupTitle: UILabel!
+    @IBOutlet weak var itemLab: UILabel!
     
+    var groupID: String!
     
     fileprivate var doubleTap = UITapGestureRecognizer()
     fileprivate var disposebag = DisposeBag()
-    private var transformAinmate: ZoomTransitioning!
+    var transformAinmate: ZoomTransitioning!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -64,29 +66,44 @@ class HomeGroupCollectionViewCell: UICollectionViewCell {
         
         
         // MARK: 点击编辑
-//        do {
-//            
-//            editBtn.rx
-//                .tap
-//                .bindNext { 
-//                    
-//                    let vc = StoryboardScene.Home.instantiateEditGroupViewController()
-//                    vc.transitioningDelegate = self
-//                    ez.topMostVC?.presentVC(vc)
-//                    
-//                }
-//                .addDisposableTo(disposebag)
-//            
-//        }
+        do {
+            
+            editBtn.rx
+                .tap
+                .bindNext { 
+                    
+                    let nav = StoryboardScene.Home.instantiateEditGroupViewNavController()
+                    nav.transitioningDelegate = self
+                    
+                    guard let vc = nav.topViewController as? EditGroupViewController else {
+                        return
+                    }
+                    
+                    vc.groupTitle = self.groupTitle.text
+                    vc.groupID = self.groupID
+                    
+                    ez.topMostVC?.presentVC(nav)
+                    
+                }
+                .addDisposableTo(disposebag)
+            
+        }
         
     }
 
 }
 
-//extension HomeGroupViewController: UIViewControllerTransitioningDelegate {
-//    
-//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        return self.transformAinmate
-//    }
-//    
-//}
+extension HomeGroupCollectionViewCell: UIViewControllerTransitioningDelegate {
+    
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transformAinmate.transitionType = .Present
+        return transformAinmate
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transformAinmate.transitionType = .Dismiss
+        return transformAinmate
+    }
+    
+}
+

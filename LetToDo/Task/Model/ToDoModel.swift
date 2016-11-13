@@ -14,7 +14,7 @@ class ToDoModel: Object {
     
     
     /// ID
-    dynamic var taskID = NSUUID().uuidString
+    dynamic var taskID = UUID().uuidString
     
     
     /// 任务名

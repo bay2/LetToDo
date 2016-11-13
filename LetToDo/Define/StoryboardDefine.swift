@@ -51,6 +51,15 @@ struct StoryboardScene {
       return vc
     }
 
+    case addGroupViewControllerScene = "AddGroupViewController"
+    static func instantiateAddGroupViewController() -> AddGroupViewController {
+      guard let vc = StoryboardScene.Home.addGroupViewControllerScene.viewController() as? AddGroupViewController
+      else {
+        fatalError("ViewController 'AddGroupViewController' is not of the expected class AddGroupViewController.")
+      }
+      return vc
+    }
+
     case editGroupViewControllerScene = "EditGroupViewController"
     static func instantiateEditGroupViewController() -> EditGroupViewController {
       guard let vc = StoryboardScene.Home.editGroupViewControllerScene.viewController() as? EditGroupViewController
@@ -59,9 +68,39 @@ struct StoryboardScene {
       }
       return vc
     }
+
+    case editGroupViewNavControllerScene = "EditGroupViewNavController"
+    static func instantiateEditGroupViewNavController() -> UINavigationController {
+      guard let vc = StoryboardScene.Home.editGroupViewNavControllerScene.viewController() as? UINavigationController
+      else {
+        fatalError("ViewController 'EditGroupViewNavController' is not of the expected class UINavigationController.")
+      }
+      return vc
+    }
+
+    case homeGroupViewControllerScene = "HomeGroupViewController"
+    static func instantiateHomeGroupViewController() -> HomeGroupViewController {
+      guard let vc = StoryboardScene.Home.homeGroupViewControllerScene.viewController() as? HomeGroupViewController
+      else {
+        fatalError("ViewController 'HomeGroupViewController' is not of the expected class HomeGroupViewController.")
+      }
+      return vc
+    }
   }
   enum LaunchScreen: StoryboardSceneType {
     static let storyboardName = "LaunchScreen"
+  }
+  enum Task: String, StoryboardSceneType {
+    static let storyboardName = "Task"
+
+    case toDoViewControllerScene = "ToDoViewController"
+    static func instantiateToDoViewController() -> ToDoViewController {
+      guard let vc = StoryboardScene.Task.toDoViewControllerScene.viewController() as? ToDoViewController
+      else {
+        fatalError("ViewController 'ToDoViewController' is not of the expected class ToDoViewController.")
+      }
+      return vc
+    }
   }
 }
 

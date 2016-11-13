@@ -12,6 +12,8 @@
 		910DC3601D8CD8910023D906 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910DC35F1D8CD8910023D906 /* RxDataSources.framework */; };
 		910DC7DD1D91FE200033801A /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910DC7DB1D91FE200033801A /* UITableViewExtension.swift */; };
 		911021E81D9196B700BF7FA7 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911021E71D9196B700BF7FA7 /* ToDoModel.swift */; };
+		91287E631DC7812A00F90AED /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91287E621DC7812A00F90AED /* GroupModel.swift */; };
+		91287E661DC7913700F90AED /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91287E651DC7913700F90AED /* GroupViewModel.swift */; };
 		912A71691D8D2DB10064275A /* DisplayToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A71681D8D2DB10064275A /* DisplayToDoTableViewCell.swift */; };
 		912E6E861DA35F0C00293DE1 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E6E851DA35F0C00293DE1 /* UIImageExtension.swift */; };
 		912FB9AA1DB597B80061D77B /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912FB9A91DB597B80061D77B /* AddGroupViewController.swift */; };
@@ -46,6 +48,7 @@
 		91CB03071DA34B7700028EB8 /* HomeGroupCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91CB03051DA34B7700028EB8 /* HomeGroupCollectionViewCell.xib */; };
 		91CB030C1DA3563C00028EB8 /* HomeGroupCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CB030A1DA3563C00028EB8 /* HomeGroupCollectionReusableView.swift */; };
 		91CB030D1DA3563C00028EB8 /* HomeGroupCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91CB030B1DA3563C00028EB8 /* HomeGroupCollectionReusableView.xib */; };
+		91D404A91DC78434002C1762 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D404A81DC78434002C1762 /* UIColorExtensions.swift */; };
 		91D7011C1D8CCA3C006E5741 /* HomeTableViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7011B1D8CCA3C006E5741 /* HomeTableViewVM.swift */; };
 		91E1278F1D9416CF0043B693 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E1278E1D9416CF0043B693 /* RxRealm.framework */; };
 		F1BF969FE26448E92C48E525 /* Pods_LetToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB39BCEFF15381652C8273C /* Pods_LetToDo.framework */; };
@@ -71,6 +74,8 @@
 		910DC35F1D8CD8910023D906 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		910DC7DB1D91FE200033801A /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		911021E71D9196B700BF7FA7 /* ToDoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
+		91287E621DC7812A00F90AED /* GroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
+		91287E651DC7913700F90AED /* GroupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
 		912A71681D8D2DB10064275A /* DisplayToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayToDoTableViewCell.swift; sourceTree = "<group>"; };
 		912E6E851DA35F0C00293DE1 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		912FB9A91DB597B80061D77B /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +112,7 @@
 		91CB03051DA34B7700028EB8 /* HomeGroupCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeGroupCollectionViewCell.xib; sourceTree = "<group>"; };
 		91CB030A1DA3563C00028EB8 /* HomeGroupCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeGroupCollectionReusableView.swift; sourceTree = "<group>"; };
 		91CB030B1DA3563C00028EB8 /* HomeGroupCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeGroupCollectionReusableView.xib; sourceTree = "<group>"; };
+		91D404A81DC78434002C1762 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		91D7011B1D8CCA3C006E5741 /* HomeTableViewVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewVM.swift; sourceTree = "<group>"; };
 		91E1278E1D9416CF0043B693 /* RxRealm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRealm.framework; path = Carthage/Build/iOS/RxRealm.framework; sourceTree = "<group>"; };
 		E03A70BF4A1E5440ABCCA0B1 /* Pods-LetToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetToDo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetToDo/Pods-LetToDo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 				910CDB131D9FB6F900FFEE68 /* MGSwipeButtonExtension.swift */,
 				912E6E851DA35F0C00293DE1 /* UIImageExtension.swift */,
 				91970D921DB12EA600704A27 /* UIViewExitension.swift */,
+				91D404A81DC78434002C1762 /* UIColorExtensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -152,6 +159,22 @@
 				911021E71D9196B700BF7FA7 /* ToDoModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		91287E611DC7808800F90AED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91287E621DC7812A00F90AED /* GroupModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		91287E641DC7911C00F90AED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				91287E651DC7913700F90AED /* GroupViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		918680801D88C24C00CF5187 = {
@@ -220,9 +243,11 @@
 		91AEB79E1DA335F300BDB7B4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				91AC30801DC6B5D800B8D14A /* Home.storyboard */,
+				91287E641DC7911C00F90AED /* ViewModel */,
+				91287E611DC7808800F90AED /* Model */,
 				91AB019A1DA74F450069A3AD /* Controller */,
 				91CB03011DA34B5B00028EB8 /* View */,
+				91AC30801DC6B5D800B8D14A /* Home.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -488,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91287E661DC7913700F90AED /* GroupViewModel.swift in Sources */,
 				912FB9AA1DB597B80061D77B /* AddGroupViewController.swift in Sources */,
 				91AC307B1DC6420B00B8D14A /* ZoomTransitioning.swift in Sources */,
 				910DC7DD1D91FE200033801A /* UITableViewExtension.swift in Sources */,
@@ -497,6 +523,7 @@
 				9186808D1D88C24C00CF5187 /* AppDelegate.swift in Sources */,
 				91BE64701D9558F2001C64EC /* InputToDoView.swift in Sources */,
 				91A325A91D965BB800FDCE6B /* AddToDoTableView.swift in Sources */,
+				91D404A91DC78434002C1762 /* UIColorExtensions.swift in Sources */,
 				91AC307D1DC64A9100B8D14A /* EditGroupViewController.swift in Sources */,
 				91C873351D8BC89000FA2EF2 /* StoryboardDefine.swift in Sources */,
 				910CDB141D9FB6F900FFEE68 /* MGSwipeButtonExtension.swift in Sources */,
@@ -505,6 +532,7 @@
 				91970D931DB12EA600704A27 /* UIViewExitension.swift in Sources */,
 				91AB019C1DA74F5C0069A3AD /* HomeGroupViewController.swift in Sources */,
 				912E6E861DA35F0C00293DE1 /* UIImageExtension.swift in Sources */,
+				91287E631DC7812A00F90AED /* GroupModel.swift in Sources */,
 				91CB03061DA34B7700028EB8 /* HomeGroupCollectionViewCell.swift in Sources */,
 				91C873331D8BC89000FA2EF2 /* ColorsDefine.swift in Sources */,
 				91970D8F1DB12A9900704A27 /* AssociatedObject.swift in Sources */,

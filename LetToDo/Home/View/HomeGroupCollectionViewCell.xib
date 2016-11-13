@@ -107,7 +107,7 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Xts-0W-VBL" secondAttribute="trailing" constant="5" id="DUk-Wq-5wk"/>
                                     <constraint firstItem="24x-CB-nkm" firstAttribute="centerY" secondItem="HA7-5B-vZ1" secondAttribute="centerY" id="Ety-Jg-F5C"/>
@@ -149,6 +149,7 @@
                 <outlet property="editBtn" destination="0sI-IC-XKA" id="xcm-0W-eXl"/>
                 <outlet property="editView" destination="3Zl-HD-v6W" id="wtT-HU-9ts"/>
                 <outlet property="groupTitle" destination="24x-CB-nkm" id="sfz-yD-JXs"/>
+                <outlet property="itemLab" destination="N60-ou-vOp" id="hgb-i9-JeL"/>
                 <outlet property="mainView" destination="aCl-ql-0vT" id="HmA-4p-pUw"/>
                 <outlet property="moreBtn" destination="Xts-0W-VBL" id="Iat-vF-mBN"/>
             </connections>

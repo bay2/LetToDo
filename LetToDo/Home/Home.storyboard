@@ -36,7 +36,15 @@
                             <constraint firstAttribute="trailing" secondItem="eje-r0-jva" secondAttribute="trailing" id="j6P-jl-J7e"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="G80-0T-617"/>
+                    <navigationItem key="navigationItem" id="G80-0T-617">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="niT-IW-EJT">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="closeItem" destination="niT-IW-EJT" id="03r-d3-TbQ"/>
+                        <outlet property="editTextView" destination="eje-r0-jva" id="opV-rF-7Mp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="geO-fZ-2ii" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,11 +59,11 @@
                         <viewControllerLayoutGuide type="bottom" id="QYq-Rx-8ma"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yEj-3F-thT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eYA-0C-cmU">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="a4I-68-QoZ">
                                     <size key="itemSize" width="50" height="50"/>
@@ -75,7 +83,7 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ret-Kp-kP1">
-                                <rect key="frame" x="273" y="565" width="102" height="102"/>
+                                <rect key="frame" x="273" y="501" width="102" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <state key="normal" image="HomeAdd"/>
                                 <connections>
@@ -106,9 +114,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9D8-GI-ZFx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3ZB-6E-huT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="3ZB-6E-huT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.12549019607843137" green="0.53725490196078429" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -128,18 +137,21 @@
                         <viewControllerLayoutGuide type="bottom" id="pqs-kB-Fk2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Rev-at-7Qj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sAb-th-3YW" customClass="AnimatableTextView" customModule="IBAnimatable">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="This group is ..."/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                         <color key="value" red="0.80784313730000001" green="0.87843137250000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
@@ -152,27 +164,40 @@
                             <constraint firstAttribute="trailing" secondItem="sAb-th-3YW" secondAttribute="trailing" id="sT9-3O-l21"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="YWl-Dm-gsK"/>
+                    <navigationItem key="navigationItem" id="YWl-Dm-gsK">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="gYB-nh-ed1">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="f9l-wr-tRC" kind="unwind" unwindAction="dismissCurrentViewController:" id="HPV-ki-bF3"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Cre-Aq-J0C">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addBtnItem" destination="Cre-Aq-J0C" id="Tb9-4W-27L"/>
                         <outlet property="inputTextView" destination="sAb-th-3YW" id="0Ze-1F-D54"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fW-Ta-ONi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="f9l-wr-tRC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="996" y="-11"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="837-kO-hX3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wRZ-We-NzD" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="EditGroupViewNavController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="wRZ-We-NzD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7YE-pN-dtK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="7YE-pN-dtK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.12549019607843137" green="0.53725490196078429" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="zE6-i9-sea" kind="relationship" relationship="rootViewController" id="A47-dw-Xfj"/>
+                        <segue destination="zE6-i9-sea" kind="relationship" relationship="rootViewController" id="Oc5-jh-ZqQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGt-Wx-c0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -184,9 +209,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DhF-hy-9w3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kNa-75-5n7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="kNa-75-5n7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.12549019607843137" green="0.53725490196078429" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
